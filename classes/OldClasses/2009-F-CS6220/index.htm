@@ -1,0 +1,339 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6220: Data Mining Techniques</title>
+</head>
+
+<body>
+
+<h2>CS 6220: Data Mining Techniques</h2>
+<p>This course covers various aspects of data mining including OLAP technology, 
+classification, ensemble methods, association rules, sequence mining, and 
+cluster analysis. The class project involves hands-on practice of mining useful 
+knowledge from a large database.</p><hr>
+<h3>News</h3>
+<p>[12/04/2009] Slides from December 3 lecture posted<br>
+[12/04/2009] Quiz 6 solution is now 
+available<br>[11/20/2009] Slides from November 19 lecture and new homework posted<br>
+[11/20/2009] Quiz 5 solution is now 
+available<br>
+[11/13/2009] Slides from November 12 lecture and new homework posted<br>
+[11/08/2009] Quiz 4 solution is now 
+available.<br>
+[11/08/2009] Slides from November 5 lecture and new homework posted<br>
+[11/02/2009] Slides from October 29 lecture and new homework posted<br>
+[10/27/2009] Project Milestone 1 
+requirements posted<br>
+[10/24/2009] Quiz 3 solution is now 
+available<br>
+[10/24/2009] Slides from October 22 lecture and new homework posted<br>
+[10/19/2009] New homework posted<br>
+[10/16/2009] Slides from October 15 lecture posted<br>
+[10/09/2009] Quiz 2 solution is now 
+available.<br>
+[10/09/2009] Slides from October 8 lecture and new homework posted<br>
+[10/09/2009] Graded Quiz 2 can be picked up from instructor's office<br>
+[10/07/2009] Project 
+description document posted<br>
+[10/05/2009] Quiz 1 solution is now 
+available.<br>
+[10/02/2009] Find a team mate for the class project ASAP. Email 
+the TA and the instructor once you have formed a team or if you need help.<br>
+[10/02/2009] Slides from October 1 lecture and new homework posted<br>
+[10/01/2009] Graded Quiz 1 can be picked up from instructor's 
+office<br>
+[09/28/2009] Slides from September 24 lecture and new homework posted<br>
+[09/18/2009] Slides from September 17 lecture and new homework posted<br>
+[09/16/2009] Room change: Starting 
+September 17, lectures will take place in WVH 108.<br>
+[09/14/2009] Slides from September 10 lecture posted</p>
+<hr>
+<h3>Lectures</h3>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td width="105"><b>Date</b></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td align="center"><b>Remarks and Homework</b></td>
+	</tr>
+	<tr>
+		<td width="105">September 10</td>
+		<td align="center" width="353">
+		Introduction; 
+		Data Preprocessing</td>
+		<td align="center">Read chapters 1 and 2 in the book.</td>
+	</tr>
+	<tr>
+		<td width="105">September 17</td>
+		<td align="center" width="353">
+		Data Preprocessing (cont.); 
+		Classification and Prediction</td>
+		<td align="center">Read relevant sections in chapter 6.<p>Homework 
+		exercises: 2.1, 2.4, 2.6, 2.7, 2.9(c,e), 2.13(a,b), 2.14,<br>
+		6.1, 6.11(a,b)</td>
+	</tr>
+	<tr>
+		<td width="105">September 24</td>
+		<td align="center" width="353">
+		Classification and Prediction</td>
+		<td align="center">Read relevant sections in chapter 6.<p>Homework 
+		exercises: 6.2, 6.5, go thoroughly through the Naive Bayes example on 
+		slides 76/77</td>
+	</tr>
+	<tr>
+		<td width="105">October 1</td>
+		<td align="center" width="353">
+		Classification and Prediction</td>
+		<td align="center">Read relevant sections in chapter 6.<p>Homework 
+		exercises: 6.3</p>
+		<p>Practice inference with the Bayesian network on slides 107 and 108 
+		for different examples, e.g., P(S | R and ~T). Compute P(M and L and R 
+		and S and T).</p>
+		<p>For function (X1 AND X2) go through a few iterations of the 
+		perceptron training algorithm on slide 132. Use training data set {(1,1,1), 
+		(1,-1,-1), (-1, 1, -1), (-1, -1, -1)} (each tuple encodes (X1, X2, Y), 
+		where Y is the target output), learning rate eta=0.15, and initial 
+		weights w0 = -1, w1 = -1, and w2 = 1.Remember that you have to apply the 
+		sign function to the linear function to get a prediction of +1 or -1 
+		(see slide 129). Visualize what happens by plotting the points and the 
+		decision boundary in a 2-dimensional coordinate system like on slide 130 
+		(X1 on horizontal axis, X2 on vertical axis). Plot the decision boundary 
+		every time you have completely processed a training tuple. Remember that 
+		you might have to iterate through the training data multiple times.</p>
+		<p>Now try training a perceptron for the same setup, except that you are 
+		now using function (X1 XOR X2) with training tuples {(1,1,-1), (1,-1,1), 
+		(-1, 1, 1), (-1, -1, -1)}. What happens?</td>
+	</tr>
+	<tr>
+		<td width="105">October 8</td>
+		<td align="center" width="353">
+		Classification and Prediction</td>
+		<td align="center">Read relevant sections in chapter 6. Take a look at 
+		the other recommended books to find out more about neural networks and 
+		SVMs.<p>Homework exercises: 6.11(c,d,e)</p>
+		<p>For the (X1 AND X2) and for the (X1 XOR X2) problem above, apply a 
+		few iterations of the epoch updating algorithm (slides 133-135). Now do 
+		the same for the case updating algorithm. Observe how they differ from 
+		each other and how the case updating algorithm is different from the 
+		perceptron training algorithm we used in the last homework.</p>
+		<p>In class we discussed how to make a set of tuples (x,y), where x is 
+		the input attribute and y is the output, linearly separable by using a 
+		simple quadratic basis function (slides 190-193). Now consider the (X1 
+		XOR X2) example above. Propose a transformation phi(X1, X2) that uses 
+		one or more polynomial basis functions (i.e., adds attributes that are 
+		computed as polynomials over X1 and X2) to make the four training tuples 
+		linearly separable. Try to find the <i>simplest</i> possible 
+		transformation, e.g., see if you can do it by adding a single new 
+		dimension. Recall that for linear separability you need to be able to 
+		separate the tuples of class 1 from those of class -1 with a <i>
+		hyperplane</i>. Which hyperplane would work for your transformation? Can 
+		you find the maximum-margin hyperplane for your solution?</td>
+	</tr>
+	<tr>
+		<td width="105">October 15</td>
+		<td align="center" width="353">
+		Classification 
+		and Prediction</td>
+		<td align="center">Read relevant sections in chapter 6. Take a look at 
+		the other recommended books to find out more about SVMs.<p>Homework 
+		exercises: 6.8</p>
+		Create the ROC curve for the data on slide 248 without looking at the 
+		solution on slide 249.<p>Why are Gini and information gain not useful 
+		when determining the split attribute for a node in a <i>regression</i> 
+		tree?</p>
+		<p>Given a set of training tuples that reach the leaf of a decision 
+		(=classification) tree, how do you determine the value that should be 
+		returned for a test tuple reaching the leaf? How do you determine it for 
+		a regression tree? Propose two options for each tree type.</p>
+		<p>How do you measure the distance between two tuples that contain 
+		categorical attribute values and attributes with diverse ranges? For 
+		example, how can you compute reasonable distances for (salary, age, 
+		jobTitle)-tuples (30K, 25, Sales), (40K, 60, Marketing), and (50K, 30, 
+		Sales)? Assume that salaries range from 10K to 100K and age from 0 to 
+		100.</td>
+	</tr>
+	<tr>
+		<td width="105">October 22</td>
+		<td align="center" width="353">
+		Ensemble Methods 
+		(end of classification and prediction series);
+		Frequent Patterns in Sets and Sequences</td>
+		<td align="center">Read relevant sections in chapters 5 and 6. If you 
+		are curious to learn more about Additive Groves, you can take a look at 
+		our <a href="../../../papers/2007-ECML-Groves.pdf">paper</a>.<p>Homework 
+		exercises: 5.1</p>
+		<p>What are the key similarities and differences between bagging and 
+		boosting?</p>
+		<p>If a classifier has an accuracy of 95%, does that mean it is a good 
+		classifier? Justify your answer.</p>
+		<p>If a classifier has an area under the ROC curve of 0.95, does that 
+		mean it is a good classifier? Justify your answer.</p>
+		<p>What is the &quot;Apriori principle&quot; of frequent itemset mining? How does 
+		it help reduce the cost of frequent itemset mining?</p>
+		<p>For the database of market-basket transactions on slide 5, manually 
+		(= using paper and pencil) run the Apriori algorithm to find all 
+		itemsets with support of 2 or greater. In particular, for every k, 
+		perform the self-join L<sub>k</sub>*L<sub>k</sub> to generate C<sub>k+1</sub> 
+		and then prune itemsets in C<sub>k+1</sub> by checking if all their 
+		subsets of length k are in L<sub>k</sub>. For support counting, you do 
+		not have to use the hash-tree. Just count the support of the remaining 
+		candidates in C<sub>k+1</sub> directly in the database.</td>
+	</tr>
+	<tr>
+		<td width="105">October 29</td>
+		<td align="center" width="353">
+		Frequent Patterns in Sets and Sequences</td>
+		<td align="center">Read relevant sections in chapter 5.<p>Homework 
+		exercises: 5.3, 5.13, 5.14 (read the discussion about the lift measure 
+		for 5.14)</p>
+		<p>How can the hash tree help speed up the Apriori algorithm?</p>
+		<p>Why is FP-Growth often more efficient than Apriori?</p>
+		<p>What are maximal and closed frequent itemsets and why do we care 
+		about them? For the table on slide 51 and min_sup=2, do the following 
+		without further looking at slides 51 and 52: (1) create the itemset 
+		lattice, (2) annotate each lattice node with the IDs of the transactions 
+		supporting the itemset in that node, and (3) identify all frequent, 
+		closed, and maximal frequent itemsets in the lattice.</p>
+		<p>Go step-by-step through the examples on slides 78 and 79, creating 
+		the C_i and L_i sets from scratch. Now do the same for constraint 
+		AVG(S.price)&lt;3. What is different compared to the example with 
+		constraint Sum(S.price)&lt;5?</p>
+		<p>Starting with the 51 length-2 candidates on slide 96 and assuming 
+		min_sup=2, do the following: (1) find all frequent length-2 sequences 
+		(L_2), then (2) create the set of all length-3 candidate sequences 
+		(C_3), and (3) prune all those length-3 candidate sequences that contain 
+		a length-2 subsequence that is not in L_2.</p>
+		<p>Run PrefixSpan for the example data on slide 100 with min_sup = 2. 
+		Try to find all frequent sub-sequences that start with &quot;a&quot; and all those 
+		that start with &quot;b&quot;. How is PrefixSpan's way of exploring sub-sequences 
+		different from GSP? Think about differences and similarities between 
+		Apriori versus GSP and FP-growth versus PrefixSpan.</td>
+	</tr>
+	<tr>
+		<td width="105">November 5</td>
+		<td align="center" width="353">
+		Frequent Patterns in Sets and Sequences 
+		(cont.); Cluster Analysis</td>
+		<td align="center">Read relevant sections in chapters 5, 8.3, and 7. You 
+		can find out more about the algorithm for mining bursty sequences
+		<a href="../../../papers/2008-VLDB-BurstySequenceMining.pdf">here</a>.<p>
+		Homework: 7.1, 7.2, 7.3<p>Event bursts can lead to high sequence mining 
+		cost and irrelevant results. Describe in a few sentences the <i>main</i> 
+		idea of the algorithm we discussed: How does it reduce mining cost and 
+		also eliminate irrelevant results? Does it guarantee that all relevant 
+		results will be found?</td>
+	</tr>
+	<tr>
+		<td width="105">November 9</td>
+		<td align="center" width="353">&nbsp;</td>
+		<td align="center"><b>Milestone 1 report</b> due at 11:59pm</td>
+	</tr>
+	<tr>
+		<td width="105">November 12</td>
+		<td align="center" width="353">Cluster Analysis</td>
+		<td align="center">Read relevant sections in chapter 7.<p>Homework: 7.6, 
+		7.7</p>
+		<p>In class we discussed how one could compute the proximity matrix 
+		entry for the MIN distance between (C2 union C5) and 
+		C1 from the entries for the MIN distance between C2 and C1 and from the 
+		MIN distance between C5 and C1 (see slides 66-68). Show formally that 
+		this is also possible for the MAX distance. Can you do this also for the 
+		Group Average and Distance Between Centroids? If not, would it be 
+		possible by storing some auxiliary information for each entry in the 
+		proximity matrix?</p>
+		<p>For the example on slide 96, compute link({a,b,e}, {a,f,g}) and 
+		link({a,b,e}, {b,d,e}). Compare this to their Jaccard similarity scores, 
+		i.e., Jaccard({a,b,e}, {a,f,g}) and Jaccard({a,b,e}, {b,d,e}).</td>
+	</tr>
+	<tr>
+		<td width="105">November 19</td>
+		<td align="center" width="353">Cluster Analysis</td>
+		<td align="center">Read relevant sections in chapter 7.<p>Homework: 7.8, 
+		7.10, 7.15 (except CLARA)</p>
+		<p>Explain the reason for the clustering results on slides 115 and 118 (DBSCAN 
+		problems).</p>
+		<p>What is the effect of increasing or decreasing the value of
+		parameters sigma and xi for 
+		DENCLUE with Gaussian influence function?</td>
+	</tr>
+	<tr>
+		<td width="105">November 26</td>
+		<td align="center" width="353">No class: Thanksgiving</td>
+		<td align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">December 3</td>
+		<td align="center" width="353">Cluster Analysis (cont.); Data Warehousing and OLAP</td>
+		<td align="center">Read relevant sections in chapters 7 and 3</td>
+	</tr>
+	<tr>
+		<td width="105">December 7</td>
+		<td align="center" width="353">&nbsp;</td>
+		<td align="center"><b>Final project report</b> due at 11:59pm</td>
+	</tr>
+	<tr>
+		<td width="105">December 10</td>
+		<td align="center" width="353">OLAP (cont.); Course Summary</td>
+		<td align="center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">December 17</td>
+		<td align="center" width="353"><b>Final Exam</b></td>
+		<td align="center">&nbsp;</td>
+	</tr>
+</table>
+<hr>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Monday 3-4pm and Thursday 4:45-5:45pm</li>
+	<li>Send email to set up an appointment if you cannot make it during these 
+	times</li>
+</ul>
+<p>TA: Alper Okcan</p>
+<ul>
+	<li>Office hours: 3-5pm in 472 WVH</li>
+</ul>
+<p>Meeting times: Thu 6 - 9 PM<br>
+Meeting location: WVH 108</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Quizzes: 20%</li>
+	<li>Project: 40%</li>
+	<li>Final exam: 40%</li>
+</ul>
+<h3>Textbook</h3>
+<p><img border="0" src="images/HanKamberBookCover.gif" hspace="6">Jiawei Han and 
+Micheline Kamber. <a href="http://www.cs.uiuc.edu/homes/hanj/bk2/">Data Mining: 
+Concepts and Techniques</a>, 2nd edition, Morgan Kaufmann, 2006</p>
+<p>Recommended books for further reading:</p>
+<ol>
+	<li>&quot;Data Mining&quot; by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar (<a href="http://www-users.cs.umn.edu/~kumar/dmbook/index.php">http://www-users.cs.umn.edu/~kumar/dmbook/index.php</a>)</li>
+	<li>&quot;Machine Learning&quot; by Tom Mitchell (<a href="http://www.cs.cmu.edu/~tom/mlbook.html">http://www.cs.cmu.edu/~tom/mlbook.html</a>)</li>
+	<li>&quot;Introduction to Machine Learning&quot; by Ethem ALPAYDIN (<a href="http://www.cmpe.boun.edu.tr/~ethem/i2ml/">http://www.cmpe.boun.edu.tr/~ethem/i2ml/</a>)</li>
+	<li>&quot;Pattern Classification&quot; by Richard O. Duda, Peter E. Hart, David G. 
+	Stork (<a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html</a>)</li>
+	<li>&quot;The Elements of Statistical Learning: Data Mining, Inference, and 
+	Prediction&quot; by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (<a href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/">http://www-stat.stanford.edu/~tibs/ElemStatLearn/</a>)</li>
+</ol>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academichonesty.html">Academic 
+Integrity</a> Web page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

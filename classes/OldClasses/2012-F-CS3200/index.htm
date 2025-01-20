@@ -1,0 +1,348 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS 3200: Database Design</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 3200: Database Design</h2>
+<p>This course studies the design of a database for use in a relational database 
+management system. The entity-relationship model and normalization will be used 
+in example problems. Relational algebra and the SQL language will be presented. 
+Advanced topics include triggers, stored procedures, indexing, elementary query 
+optimization, and fundamentals of concurrency and recovery. Students will 
+implement a database schema and short application programs on a 
+commercial relational database management system. </p><hr>
+<h3>News</h3>
+<p>Link to Piazza discussion forum:
+<a class="signup-link" href="https://piazza.com/class#" style="font-weight: normal;">
+https://piazza.com/northeastern/fall2012/cs3200/home</a></p>
+<p>[12/11/2012] Topic overview document and lecture audio 
+updated</p>
+<hr>
+<h3>Lectures</h3>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td style="width: 61px"><b>Date</b></td>
+		<td align="center" style="width: 341px"><b>Topic</b></td>
+		<td class="style2">Remarks and Recommended Homework</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 5</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/1-Introduction.pdf">Introduction</a></td>
+		<td class="style1">Read introduction chapter in textbook</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 10</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Entity Relationship Model (ERM)</a></td>
+		<td class="style1">Read in your favorite textbook about modeling 
+		entities and their relationships using ERM. (UML is conceptually the 
+		same, just with different pictures.) Things to focus on: What are keys? 
+		How is the primary key of an entity set selected? How is the primary key 
+		of a relationship set determined? How does 
+		the corresponding SQL code look like? And how can we enforce referential 
+		integrity (foreign key references) and control the database's reaction 
+		to a potential violation?</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 12</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">ERM continued</a></td>
+		<td class="style1">Study the advanced ERM concepts: key and 
+		participation constraints (e.g., 1-to-1, 1-to-many, many-to-1, 
+		many-to-many), weak entities, hierarchies (&quot;ISA&quot;). Try to write the SQL 
+		code for the design alternatives we discussed for the ISA hierarchy 
+		example.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 17</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">ERM completed</a></td>
+		<td class="style1">Study the aggregation concept and explain why we need 
+		it. Go over the design alternatives we 
+		discussed and make sure you understand their tradeoffs: entity vs. 
+		attribute, entity vs. relationship, binary vs. ternary relationships. 
+		For each example we discussed, try to create the corresponding relations and 
+		write the SQL code. Make sure you specify the required primary keys, 
+		foreign key references, and NOT NULL constraints.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 19</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Relational Algebra</a></td>
+		<td class="style1">Study the relational operators and make sure you 
+		could compute their results for given example relations. Take the 
+		example &quot;queries&quot;, hide the algebra expression, and now try to find the 
+		expression yourself. Then try to modify the query to find other 
+		information in the example database. Write down the schema of 
+		intermediate results to catch mistakes like the &quot;topic=DB AND topic=PL&quot; 
+		selection condition we discussed. Draw the query plan and think about 
+		how pushing down selections and projections can reduce cost.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 24</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Relational Calculus</a></td>
+		<td class="style1">Try to write calculus expressions, starting with the 
+		examples we discussed and then modifying the queries. Make sure you know 
+		how to express joins in DRC.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Sep 26</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">SQL</a></td>
+		<td class="style1">Practice writing SQL queries. You can create the 
+		example tables in the DB server, add a few example tuples, and then try 
+		out your queries. Then modify the queries and see what happens. For a 
+		given basic SELECT-FROM-WHERE and for nested SQL queries such as the 
+		ones we discussed, you should be able to manually compute the result on 
+		a given database.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 1</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">SQL</a></td>
+		<td class="style1">Review the &quot;students who reserved all books&quot; query in 
+		SQL and compare it to the calculus expression. Go over the 
+		conceptual evaluation algorithm for queries with GROUP BY and 
+		aggregation. Pay particular attention to the following: which attributes 
+		can appear in the SELECT clause and which cannot? What is different 
+		between a condition in the WHERE clause versus the HAVING clause? Try 
+		different versions of the aggregate queries, including the incorrect 
+		ones, in the real database and see what happens.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 3</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">SQL, NULL, integrity 
+		constraints, views</a></td>
+		<td class="style1">Study the issues related to NULL and the various 
+		subtleties we discussed in class. Create a view in the Postgres 
+		database. Run SELECT * on the view and observe the result. Then modify 
+		some of the view's base tables, run SELECT * again, and see how the 
+		result differs. Add some CHECK constraints to your database tables. Then 
+		try to perform an update that would violate a constraint. What happens? 
+		Also, try to write a CHECK constraint that computes an aggregate on the 
+		table or refers to data in another table.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 8</td>
+		<td align="center" style="width: 341px">
+		No class: Columbus Day</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 10</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Integrity constraints, outer 
+		join, SQL functions, user-defined aggregates, trigger introduction</a></td>
+		<td class="style1">Try an outer join on the HW 2 database and see what 
+		happens compared to a &quot;normal&quot; (i.e., inner) join. Review SQL functions: 
+		function parameters and using them to parameterize a query, calling 
+		functions, using functions in the FROM clause, basic definition of 
+		user-defined aggregates. Review triggers: distinction between event, 
+		condition, and action. What are possible events?</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 15</td>
+		<td align="center" style="width: 341px">
+		HW 2 solution, <a href="Slides/2012-F-CS3200-Topics.pdf">triggers, 
+		trigger functions</a></td>
+		<td class="style1">Review the HW 2 reference solution and compare it 
+		with your own design. For triggers, read the sections on CREATE TRIGGE 
+		and on trigger procedures in the Postgres manual. How can we specify 
+		conditions and actions? Try to write your own function or trigger and 
+		run it in Postgres. For a trigger, try 
+		to make it fire by executing the appropriate event. </td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 17</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">PL/pgSQL functions; transactions</a></td>
+		<td class="style1">Write a trigger function that uses conditionals (IF, 
+		CASE) and loops (LOOP, WHILE, FOR). Make the trigger fire and see if it 
+		behaves as expected. Run the somefunc() function we discussed in class 
+		and see if the printed value of variable 'quantity' is indeed as 
+		claimed. Experiment with the scope of variables by renaming variable 
+		'quantity' in the local scope declaration to 'quant' and see if the 
+		function output changes. Review the discussion about transactions.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 22</td>
+		<td align="center" style="width: 341px">
+		Midterm review; <a href="Slides/2012-F-CS3200-Topics.pdf">transactions</a></td>
+		<td class="style1">Make sure you understand the meaning of the ACID 
+		properties. Go over the WR, RW, WW anomaly examples and identify which 
+		ACID properties they violate. Then explore how Strict 2PL would prevent 
+		these anomalies by going step-by-step through the examples. How can 
+		Strict 2PL result in deadlocks?</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 24</td>
+		<td align="center" style="width: 341px">
+		Midterm Exam</td>
+		<td class="style1">Same time and location as the lecture.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 29</td>
+		<td align="center" style="width: 341px">
+		No class due to hurricane emergency.</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Oct 31</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Transactions</a> completed</td>
+		<td class="style1">Study the phantom problem and how to prevent 
+		it. Try creating transactions and running them on Postgres.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 5</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">JDBC</a></td>
+		<td class="style1">Look carefully at the JDBC examples (update and 
+		query) and try to run them from your machine. (For the update, replace 
+		the SQL part with a data update.) Make some modifications by using the 
+		API calls we discussed, e.g., try running a transaction.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 7</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Storage and Indexing</a></td>
+		<td class="style1">Study heap file, sorted file, and B+ tree. Think 
+		about how they affect query and update cost. Make sure you understand 
+		how equality and inequality queries are processed by a B+ tree. What is 
+		different between storing the actual data records in the tree's leaf 
+		nodes compared to only storing data entries that point (through RIDs) to 
+		these records in a separate heap file?</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 12</td>
+		<td align="center" style="width: 341px">
+		No class: Veteran's Day</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 14</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Storage and Indexing</a></td>
+		<td class="style1">Read about the indexes we discussed in your favorite 
+		DB textbook.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 19</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Query Optimization</a></td>
+		<td class="style1">Read about index selection design decisions in your 
+		favorite DB textbook. Think of other queries and try to find the best 
+		indexes for them. Think about how to achieve index-only plans.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 21</td>
+		<td align="center" style="width: 341px">
+		No class: Thanksgiving</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 26</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Query Optimization</a></td>
+		<td class="style1">Review the different join algorithms and learn about 
+		the block nested loops algorithm in your favorite textbook. Read more 
+		about query optimization there as well.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Nov 28</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Normal Forms</a></td>
+		<td class="style1">Read about functional dependencies, Armstrong's axioms, 
+		and the Boyce-Codd Normal Form (BCNF) in your favorite textbook.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Dec 3</td>
+		<td align="center" style="width: 341px">
+		<a href="Slides/2012-F-CS3200-Topics.pdf">Normal Forms; Recovery</a></td>
+		<td class="style1">Read about 3NF and the other normal forms in your 
+		favorite textbook. Focus on the difference between 3NF and BCNF, 
+		especially the tradeoffs of choosing one versus the other. Read about the details of 
+		the ARIES recovery approach in your textbook.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Dec 5</td>
+		<td align="center" style="width: 341px">
+		Final exam review; Beyond Relational DBMS</td>
+		<td class="style1">For more information about SQL injection, try a Web 
+		search. There is a lot of quality information among the top-10 results 
+		already. For MapReduce, take a look at the original
+		<a href="http://research.google.com/archive/mapreduce.html">Google paper</a> 
+		and the articles we posted on Blackboard under Course Material -&gt; Course 
+		Documents.</td>
+	</tr>
+	<tr>
+		<td style="width: 61px">Dec 14</td>
+		<td align="center" style="width: 341px">
+		Final Exam</td>
+		<td class="style1">1-3pm, Hurtig Hall 129 (check myNEU for the latest 
+		official information)</td>
+	</tr>
+	</table>
+<hr>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Wednesday 10am-noon in 332 WVH</li>
+	<li>Just send email (including Yijia) to set up an appointment if you cannot make it during these 
+	times</li>
+</ul>
+<p>TA: Yijia Gu</p>
+<ul>
+	<li>Office hours: Monday 9:30-10:30am and Friday 2-3pm in 472 WVH</li>
+</ul>
+<p>Lecture times: MW 2:50 - 4:30pm<br>
+Lecture location: WVG 104</p>
+<h3>Prerequisites</h3>
+<p>CS 2510 (CS U213)</p>
+<h3>Grading</h3>
+<ul>
+	<li>Homework: 55%</li>
+	<li>Midterm: 20%</li>
+	<li>Final exam: 25%</li>
+</ul>
+<h3>Recommended Textbooks</h3>
+<ul>
+	<li>Database Management Systems (3rd edition) by Ramakrishnan and Gehrke</li>
+	<li>A First Course in Database Systems (3rd edition) by Ullman and Widom</li>
+	<li>Fundamentals of Database Systems (6th edition) by Elmasri and Navathe</li>
+	<li>Database System Concepts (6th edition) by Silberschatz, Korth, and 
+	Sudarshan </li>
+</ul>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academichonesty.html">Academic 
+Integrity</a> Web page.</p>
+
+</body>
+
+</html>

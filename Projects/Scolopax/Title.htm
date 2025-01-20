@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Pattern Search Engine</title>
+<base target="contents">
+<style type="text/css">
+.style1 {
+	font-family: Calibri;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="style1">Pattern Search Engine</h1>
+<p><span class="style1"><strong>Data:</strong></span> <span class="style1">
+<a href="http://www.avianknowledge.net/content/features/archive/eBird_Ref" target="_blank">eBird 
+Reference Dataset</a> (description also available
+<a href="../../papers/ebird-ref-data.pdf" target="_blank">here</a>)</span></p>
+<p class="style1"><strong>Goal:</strong> Find interesting patterns that suggest how observed bird presence depends 
+on variables (aka attributes) describing habitat, climate, land cover, human 
+population etc.</p>
+<p class="style1"><strong>Current functionality:</strong> The system creates and searches one-dimensional 
+summaries of a high-dimensional model trained on the eBird Reference Dataset. 
+Intuitively the summary on an attribute A represents the effect of A on the 
+output, taking into account the average effect of all other attributes. This is 
+usually referred to as a partial dependence summary. By default the summaries 
+are computed for the entire data space. To discover patterns that are spatially 
+or temporally &quot;local&quot;, it is possible to create summaries for spatio-temporal 
+partitions of the data space. <strong>Notice</strong> that even though all 
+computations happen in parallel on 44 CPU cores, it might take a minute to 
+create and rank 100,000 summaries (more time for more summaries).</p>
+
+</body>
+
+</html>

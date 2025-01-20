@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Search Hints</title>
+<style type="text/css">
+.style1 {
+	color: #0000FF;
+	font-family: Calibri;
+}
+.style2 {
+	font-family: Calibri;
+}
+.auto-style1 {
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<h3 class="style2">How to use it:</h3>
+<p class="style2">Query Input tab</p>
+<p class="style2"><span class="auto-style1"><strong>CAREFUL</strong></span>: 
+correlation search can be expensive as there are n<sup>2</sup> possible pairs 
+for n summaries. E.g., if there are 100,000 summaries, Scolopax might have to 
+explore up to 10 billion pairs!</p>
+<ol>
+	<li><span class="style2">Select species of interest</span><ol>
+		<li class="style2">Use control+click to add another species</li>
+		<li class="style2">Use shift+click to add range of species</li>
+	</ol>
+	</li>
+	<li><span class="style2">Select region and partitioning of interest</span></li>
+	<li class="style2">Compose a join conditions to find related pairs of 
+	summaries<ol>
+		<li class="style2">Correlation finds similar summaries, 
+		anti-correlations finds those most different from each other.</li>
+		<li class="style2">The species join condition limits the summary pairs 
+		considered to those where both species are (not) the same.</li>
+		<li class="style2">The region join condition limits the summary pairs 
+		considered to those that are (not) for the same geographical region.</li>
+		<li class="style2">The epsilon value eliminates poor matches. If you are 
+		not sure how to set it, choose a large value, e.g., 100, for correlation 
+		search and zero for anti-correlation search. Then decrease (correlation 
+		search) or increase (anti-correlation search) it to reduce result size.</li>
+	</ol>
+	</li>
+	<li class="style2">Submit</li>
+	<li class="style2">The Predefined Queries section allows storing and 
+	re-using of queries for future use. Re-execution will be faster, because 
+	previous results are stored in HBase (but might be deleted at some point 
+	when the database runs out of space.)</li>
+</ol>
+<p class="style2">Results tab</p>
+<ol>
+	<li class="style2">View the summary pairs patterns found, sorted by their 
+	(anti-)correlation, measured as the distance between the lines after 
+	shifting by mean (for shift-invariance).<ol>
+		<li class="style2">When hovering over the plot line or title, the 
+		corresponding region is highlighted on the map.</li>
+	</ol>
+	</li>
+	<li><span class="style2">Eliminate results from the list if desired</span></li>
+	<ol>
+		<li class="style2">In the filter panel, choose which results to remove. E.g., selecting 
+		a species will remove all results for the species.</li>
+		<li class="style2">Filters can be added and removed as desired.</li>
+	</ol>
+	<li class="style2">The settings panel allows plot settings to be changed. To 
+	export a plot, un-select &quot;show interactive plots&quot;.</li>
+	<li class="style2">The plots at the bottom of the results panel visualize 
+	the distribution of input and output over the Reduce tasks (which perform 
+	the actual join work) during join computation. </li>
+</ol>
+
+<p><strong><span class="style2">At any time, it is possible to go to another tab by simply clicking 
+on it. However, </span> <span class="style1">if the browser's forward or back buttons 
+are used, the previous state is lost</span><span class="style2">.</span></strong></p>
+
+</body>
+
+</html>

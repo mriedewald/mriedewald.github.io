@@ -1,0 +1,264 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6240: Parallel Data Processing in MapReduce</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+.style3 {
+	border-color: #000000;
+	border-width: 0;
+}
+.style4 {
+	border: 1px solid #808080;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 6240: Parallel Data Processing in MapReduce</h2>
+<p>This course covers techniques for analyzing very large data sets. We 
+introduce the MapReduce programming model and the core technologies it relies on 
+in practice, such as a distributed file system. Related approaches and 
+technologies from distributed databases and Cloud Computing will also be 
+introduced. Particular emphasis is placed on practical examples and hands-on 
+programming experience. Both plain MapReduce and database-inspired advanced 
+programming models running on top of a MapReduce infrastructure will be used.</p><hr>
+<h3>News</h3>
+<p>[12/01/2011] Materials from Nov 30 lecture posted<br>[11/10/2011] Materials from Nov 9 lecture posted<br>[11/03/2011] Slides and audio from Nov 2 lecture posted<br>[10/20/2011] Audio from Oct 19 lecture posted on Blackboard<br></p>
+<hr>
+<h3>Lectures</h3>
+<p>Larger version of slides (2 per page)</p>
+<ul>
+	<li><a href="Slides/Lecture1-large.pdf">Introduction and first parallel 
+	algorithms</a></li>
+	<li><a href="Slides/Lecture2-large.pdf">More parallel algorithms; MapReduce</a></li>
+	<li><a href="Slides/Lecture3-large.pdf">MapReduce algorithm examples; 
+	handling failures</a></li>
+	<li><a href="Slides/Lecture4-large.pdf">MapReduce; Google File System; 
+	Hadoop specifics</a></li>
+	<li><a href="Slides/Lecture5-large.pdf">Pig; MapReduce design patterns</a></li>
+	<li><a href="Slides/Lecture6-large.pdf">MapReduce design patterns; joins</a></li>
+	<li><a href="Slides/Lecture7-large.pdf">Joins</a></li>
+	<li><a href="Slides/Lecture8-large.pdf">Graph algorithms</a></li>
+	<li><a href="Slides/Lecture9-large.pdf">Dryad; databases</a></li>
+</ul>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td width="105"><b>Date</b></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td class="style2">Remarks and Reading Assignments</td>
+	</tr>
+	<tr>
+		<td width="105">September 7</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture1.pdf">Introduction and first parallel algorithms</a></td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">September 14</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2.pdf">More parallel algorithms; MapReduce</a></td>
+		<td class="style1">Read the
+		<a href="http://labs.google.com/papers/mapreduce.html">Google MapReduce 
+		paper</a>. Look carefully at the word count and equi-join examples and 
+		make sure you can explain how the computation works.</td>
+	</tr>
+	<tr>
+		<td width="105">September 21</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture3.pdf">MapReduce algorithm examples; handling 
+		failures</a></td>
+		<td class="style1">Go over all the MapReduce algorithms we discussed in 
+		class and read the discussion about sorting in chapter 8 of the Tom 
+		White book. Then try to write the pseudo-code for Map and Reduce for all 
+		problems without 
+		looking at the lecture notes. Finally, look at the Grep.java and Sort.java 
+		examples that come with the Hadoop distribution. Match the Java code 
+		with your pseudo-code and execute it for some example data.</td>
+	</tr>
+	<tr>
+		<td width="105">September 26</td>
+		<td align="center" width="353">
+		HW 1 due at 11pm</td>
+		<td class="style1">Submit it through Blackboard.</td>
+	</tr>
+	<tr>
+		<td width="105">September 28</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture4.pdf">MapReduce; Google File System; Hadoop 
+		specifics</a></td>
+		<td class="style1">Read the
+		<a href="http://labs.google.com/papers/gfs.html">Google File System 
+		paper</a>. Read chapters 1, 2, 3, 4, 5, 6, and 7 in the Tom White book.</td>
+	</tr>
+	<tr>
+		<td width="105">October 5</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture5.pdf">Pig; MapReduce design patterns</a></td>
+		<td class="style1">Read the
+		<a href="http://dl.acm.org/citation.cfm?id=1376726">Pig paper</a>. Read 
+		chapters 8 and 11 in the Tom White book.</td>
+	</tr>
+	<tr>
+		<td width="105">October 12</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture6.pdf">MapReduce design patterns; joins</a></td>
+		<td class="style1">Read the appropriate sections in the Lin/Dyer book 
+		(see below). For the joins, take a look at
+		<a href="../../../papers/2011-SIGMOD-ParallelJoins.pdf">our paper</a>.</td>
+	</tr>
+	<tr>
+		<td width="105">October 19</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture7.pdf">Joins</a></td>
+		<td class="style1">Read
+		<a href="../../../papers/2011-SIGMOD-ParallelJoins.pdf">our paper</a>.</td>
+	</tr>
+	<tr>
+		<td width="105">October 20</td>
+		<td align="center" width="353">
+		HW 2 due at 11pm</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">October 26</td>
+		<td align="center" width="353">
+		Midterm exam (6-8pm in usual classroom)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">November 2</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture8.pdf">Graph algorithms</a></td>
+		<td class="style1">Read the appropriate sections in the Lin/Dyer book 
+		(see below). Create a small example graph and manually run the MapReduce 
+		program on the example to better understand what happens in each 
+		iteration.</td>
+	</tr>
+	<tr>
+		<td width="105">November 3</td>
+		<td align="center" width="353">
+		Project proposals due at 11pm</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">November 9</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture9.pdf">Dryad; databases</a></td>
+		<td class="style1">Read the papers on
+		<a href="http://research.microsoft.com/en-us/projects/dryad/eurosys07.pdf">
+		Dryad</a>,
+		<a href="http://research.microsoft.com/en-us/projects/dryadlinq/dryadlinq.pdf">
+		DryadLINQ</a>, and <a href="http://dl.acm.org/citation.cfm?id=129894">
+		parallel databases</a>. For more information about transactions, consult 
+		any standard database textbook.</td>
+	</tr>
+	<tr>
+		<td width="105">November 16</td>
+		<td align="center" width="353">
+		Project progress presentations in class</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">November 23</td>
+		<td align="center" width="353">
+		No class: Thanksgiving.</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">November 30</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture10.pdf">GPU computing (by Perhaad Mistry)</a>; 
+		Parallel computing classics</td>
+		<td class="style1">It is important that you go through this excellent
+		<a href="https://computing.llnl.gov/tutorials/parallel_comp/">tutorial 
+		on parallel computing</a> from LLNL. Also make sure you read this
+		<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=04490127">
+		overview article on GPU computing</a>. Perhaad's research is discussed 
+		in more detail in this
+		<a href="http://dl.acm.org/citation.cfm?id=1964193">paper</a>. And
+		<a href="https://computing.llnl.gov/tutorials/mpi/">MPI</a> and
+		<a href="https://computing.llnl.gov/tutorials/openMP/">OpenMP</a> are 
+		discussed in two other nice tutorials at LLNL.</td>
+	</tr>
+	<tr>
+		<td width="105">December 2</td>
+		<td align="center" width="353">
+		Project reports due at 11pm</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">December 7</td>
+		<td align="center" width="353">
+		Final lecture</td>
+		<td class="style1">Project presentations in class</td>
+	</tr>
+	<tr>
+		<td width="105">December 14</td>
+		<td align="center" width="353">
+		Final exam 6-8pm in usual classroom</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	</table>
+<hr>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Wednesday 4:30-5:30 PM and Thursday 11AM-noon</li>
+	<li>Send email to set up an appointment if you cannot make it during these 
+	times</li>
+</ul>
+<p>TA: no TA</p>
+<p>Meeting times: Wed 6 - 9 PM<br>
+Meeting location: Ryder Hall 429</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Homework/project: 40%</li>
+	<li>Midterm exam: 25%</li>
+	<li>Final exam: 30%</li>
+	<li>Participation: 5%</li>
+</ul>
+<h3>Reading Materials</h3>
+<ol>
+	<li>&quot;Hadoop: The Definitive Guide&quot; by Tom White, 2nd edition. (Available 
+	from Safari Books Online at
+	<a href="http://0-proquest.safaribooksonline.com.ilsprod.lib.neu.edu/">
+	http://0-proquest.safaribooksonline.com.ilsprod.lib.neu.edu/</a>.)</li>
+	<li>&quot;Hadoop in Action&quot; by Chuck Lam&nbsp; (Available from Safari Books 
+	Online at
+	<a href="http://0-proquest.safaribooksonline.com.ilsprod.lib.neu.edu/">
+	http://0-proquest.safaribooksonline.com.ilsprod.lib.neu.edu/</a>.)</li>
+	<li>&quot;Data-Intensive Text Processing with MapReduce&quot; by Jimmy Lin and Chris 
+	Dyer. (Available online, see
+	<a href="http://www.umiacs.umd.edu/~jimmylin/book.html">http://www.umiacs.umd.edu/~jimmylin/book.html</a> 
+	for info.)</li>
+</ol>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academichonesty.html">Academic 
+Integrity</a> Web page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,653 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6220: Data Mining Techniques</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+.style4 {
+	border: 1px solid #000000;
+}
+.style5 {
+	border-collapse: collapse;
+	border: 1px solid #000000;
+}
+.style6 {
+	text-align: center;
+	border: 1px solid #000000;
+}
+.style7 {
+	text-align: center;
+	border: 1px solid #000000;
+	background-color: #FFFF00;
+}
+.style8 {
+	border: 1px solid #000000;
+	background-color: #FFFF00;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 6220: Data Mining Techniques</h2>
+<p>This course covers various aspects of data mining including data 
+preprocessing, classification, ensemble methods, association rules, sequence 
+mining, and cluster analysis. The class project involves hands-on practice of 
+mining useful knowledge from a large data set.</p><hr>
+<h3>News</h3>
+<p>[04/22/2010] Slides from April 21 lecture and new homework posted<br>[04/20/2010] Final Milestone 4 results are now available<br>[04/19/2010] Test set 2 for Milestone 4 is now available<br>[04/18/2010] New Milestone 4 results on Test data 1 posted<br>[04/18/2010]
+Quiz 6 solution is now available<br>[04/16/2010] Slides from April 14 lecture and new homework posted<br>[04/13/2010] Current Milestone 4 results on Test data 1 posted<br>[04/12/2010] Slides with comments about project milestones and quizzes posted<br>[04/08/2010] Slides from April 7 lecture and new homework posted<br>[04/07/2010] Milestone 4 training and first test data set are now posted<br>[04/06/2010] Project Milestone 
+4 and data description 
+document posted<br>[04/02/2010] Slides from March 31 lecture and new homework posted<br>
+[04/02/2010] Quiz 5 solution is now 
+available<br>[03/26/2010] Slides from March 24 lecture and new homework posted<br>[03/19/2010] Slides from March 17 lecture and new homework posted<br>[03/19/2010] Project Milestone 
+3 posted<br>[03/12/2010] Quiz 4 solution is now 
+available<br>[03/12/2010] Slides from March 10 lecture and new homework posted<br>[03/09/2010] Quiz 3 solution is now 
+available<br>[02/28/2010] Project Milestone 
+2 posted<br>[02/26/2010] Slides from February 24 lecture and new homework posted.<br>[02/22/2010] Quiz 2 solution is now 
+available.<br>[02/18/2010] Slides from February 17 lecture and new homework posted<br>[02/07/2010] Project Milestone 
+1 and Java code for creating plots 
+posted<br>[02/05/2010] Quiz1 solution is now 
+available<br>[02/05/2010] Slides from February 3 lecture and new homework posted<br>[01/29/2010] Slides from January 27 lecture and new homework posted<br>[01/26/2010] Homework for January 13 and 20 lectures posted<br>[01/25/2010] ***Room change***; starting this week, lectures will take place 
+in <strong>108 WVH</strong><br>[01/21/2010] Slides from January 20 lecture posted<br>
+[01/20/2010] Office hours are now determined<br>
+[01/15/2010] Slides from January 13 lecture posted</p>
+<hr>
+<h3>Lectures</h3>
+<p>(Future lectures and events are tentative.)</p>
+<p>Version of slides with space for notes:</p>
+<ul>
+	<li>Data Preprocessing</li>
+	<li>Classification and Prediction</li>
+	<li>Frequent Patterns in Sets and Sequences</li>
+	<li>Cluster Analysis</li>
+</ul>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td width="105"><b>Date</b></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td class="style2">Remarks and Homework</td>
+	</tr>
+	<tr>
+		<td width="105">January 13</td>
+		<td align="center" width="353">
+		Introduction; 
+		Data Preprocessing</td>
+		<td class="style1">Read chapters 1 and 2 in the book.</td>
+	</tr>
+	<tr>
+		<td width="105">January 20</td>
+		<td align="center" width="353">
+		Data Preprocessing (cont.);
+		Classification and Prediction</td>
+		<td class="style1">Read relevant sections in chapter 6.<br><br>Homework 
+		exercises: 2.2, 2.4(a,b,d,f,g), 2.6, 2.7(a), 2.9, 2.12, 2.13, 2.14, 6.1<br>
+		<br>For the example on slide 30, train the corresponding decision tree 
+		&quot;by hand&quot; using information gain for selecting a split attribute. Make 
+		sure you have at least one path of length 3 (root, inner node, leaf) or 
+		longer.</td>
+	</tr>
+	<tr>
+		<td width="105">January 27</td>
+		<td align="center" width="353">
+		Classification and Prediction</td>
+		<td class="style1">Read relevant sections in chapter 6. For the 
+		statistical decision theory part, take a look at the Hastie et al. book 
+		(book 5 below). However, it does not show the derivation.<br><br>
+		Homework exercises: 6.2</td>
+	</tr>
+	<tr>
+		<td width="105">February 3</td>
+		<td align="center" width="353">
+		Classification and Prediction</td>
+		<td class="style1">Read relevant sections in chapter 6. For Bayesian 
+		networks, the book by Alpaydin (book 3 below) has a little more 
+		information than the textbook.<br><br>Homework exercises: 6.5<br><br>
+		Compute P(buys_computer = 'yes' | <strong>X</strong>) and P(buys_computer 
+		= 'no' | <strong>X</strong>) for the data sample <strong>X</strong> and 
+		the training data given on slide 84. Do this without looking at the 
+		solution on slide 85. Once you are done, compare your results.<br><br>
+		For the same data on slide 84, estimate the following conditional 
+		probabilities: P(age &gt; 40 AND income = 'low' | buys_computer = 'no') and 
+		P(age &gt; 40 AND income = 'low' AND student = 'no' | buys_computer = 
+		'no'). How much would you trust these estimates to be close to the true 
+		probabilities?<br><br>Compute P(wealth = 'poor' | gender = 'female') and 
+		P(wealth = 'poor' | gender = 'male') for the example data on slide 102. 
+		Now compute P(wealth = 'rich' | gender = 'female'). What is the 
+		relationship between P(wealth = 'poor' | gender = 'female') and P(wealth 
+		= 'rich' | gender = 'female')?</td>
+	</tr>
+	<tr>
+		<td width="105">February 10</td>
+		<td align="center" width="353">
+		No class due to snow storm (campus closed after noon)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">February 17</td>
+		<td align="center" width="353">
+		Classification 
+		and Prediction</td>
+		<td class="style1">Read relevant sections in chapter 6. For 
+		understanding neural networks in more depth, Mitchell's Machine Learning 
+		book (book 2 below) is one of the best resources.<br><br>Homework 
+		exercises: 6.3<br><br>Practice inference with the Bayesian network on 
+		slides 114 and 115 for different examples, e.g., P(S | R and ~T). 
+		Compute P(M and L and R and S and T).<br><br>For function (X1 AND X2) go 
+		through a few iterations of the perceptron training algorithm on slide 
+		140. Use training data set {(1,1,1), (1,-1,-1), (-1, 1, -1), (-1, -1, 
+		-1)} (each tuple encodes (X1, X2, Y), where Y is the target output), 
+		learning rate eta=0.15, and initial weights w0 = -1, w1 = -1, and w2 = 
+		1.Remember that you have to apply the sign function to the linear 
+		function to get a prediction of +1 or -1 (see slide 137). Visualize what 
+		happens by plotting the points and the decision boundary in a 
+		2-dimensional coordinate system like on slide 138 (X1 on horizontal 
+		axis, X2 on vertical axis). Plot the decision boundary every time you 
+		have completely processed a single training tuple. Remember that you 
+		might have to iterate through the training data set multiple times. 
+		Consider writing a small program that computes the new weights.<br><br>
+		Now try training a perceptron for the same setup, except that you are 
+		now using function (X1 XOR X2) with training tuples {(1,1,-1), (1,-1,1), 
+		(-1, 1, 1), (-1, -1, -1)}. What happens?<br><br>Now use the 
+		case-updating algorithm and gradient descent (slides 142, 143) for the 
+		same XOR data set. Remember that function f is now the unthresholded 
+		simple weighted sum. Just run a few iterations and see how this 
+		algorithm is different from using the perceptron training rule. Again, 
+		writing a small program that computes the new weights when processing a 
+		training tuple might be worthwhile to both understand the algorithm and 
+		to avoid tedious manual computations.</td>
+	</tr>
+	<tr>
+		<td width="105">February 19</td>
+		<td align="center" width="353">
+		&nbsp;</td>
+		<td class="style1"><strong>Project Milestone 1</strong> due at 4pm<br>
+		Resources: 
+		Milestone 1 description and plotter 
+		code</td>
+	</tr>
+	<tr>
+		<td width="105">February 24</td>
+		<td align="center" width="353">
+		Classification 
+		and Prediction</td>
+		<td class="style1">Read relevant sections in chapter 6. More 
+		in-depth information about SVMs can be found in Hastie et al. (book 5 
+		below) and in a nice
+		<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.117.3731">
+		survey paper by Burges</a> (or search the web for &quot;tutorial on support 
+		vector machines for pattern recognition&quot;). Notice how both use different 
+		notation to denote the same concepts.<br><br>Homework:<br><br>To 
+		appreciate why the optimization criterion of Quadratic Programming is 
+		indeed quadratic, do the following: Consider a vector <strong>u</strong> 
+		= (u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>)<sup>T</sup>, i.e., a 
+		vector with 3 rows and 1 column. Set q = 2, <strong>d</strong> = (1,2,3)<sup>T</sup>, 
+		and let <strong>R</strong> be a matrix with 3 rows and 3 columns, such 
+		that each entry in the matrix is equal to 1. Now compute the expression 
+		q + <strong>d</strong><sup>T</sup>*<strong>u</strong> + <strong>u</strong><sup>T</sup>*<strong>R</strong>*<strong>u</strong>, 
+		where operator &quot;*&quot; is the standard matrix multiplication.<br><br>In class we discussed how 
+		to make a set of tuples (x,y), where x is the input attribute and y is 
+		the output, linearly separable by using a simple quadratic basis 
+		function (slides 199-201). Now consider again the (X1 XOR X2) example 
+		from last week. Propose a transformation phi(X1, X2) that uses one or more 
+		polynomial basis functions (i.e., adds attributes that are computed as 
+		polynomials over X1 and X2) to make the four training tuples linearly 
+		separable. Try to find the simplest possible transformation, e.g., see 
+		if you can do it by adding a single new dimension. Recall that for 
+		linear separability you need to be able to separate the tuples of class 
+		1 from those of class -1 with a <em>hyperplane</em>. Which hyperplane 
+		would work for your transformation? Can you also find the maximum-margin hyperplane for your solution?<br><br>For the same XOR classification 
+		problem above, write down the complete SVM optimization problem--optimization 
+		goal and all constraints--using the primal version with the slack variables (like on slide 192).</td>
+	</tr>
+	<tr>
+		<td width="105">March 3</td>
+		<td align="center" width="353">
+		No class: Spring Break</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">March 10</td>
+		<td align="center" width="353">
+		Classification and Prediction</td>
+		<td class="style1">Read relevant sections in chapter 6.<br><br>Homework 
+		exercises: 6.8<br><br>Create the ROC curve for the data on slide 258 
+		without looking at the solution on slide 259.<br><br>How does the ROC 
+		curve look like for a classifier that only outputs either &quot;+&quot; or &quot;-&quot; for 
+		each test tuple?<p>Why are Gini and information gain not useful when 
+		determining the split attribute for a node in a <i>regression</i> tree?</p>
+		<p>Given a set of training tuples that reach the leaf of a decision 
+		(=classification) tree, how do you determine the value that should be 
+		returned for a test tuple reaching the leaf? How do you determine it for 
+		a regression tree? Propose two options for each tree type.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="105">March 15</td>
+		<td align="center" width="353">
+		&nbsp;</td>
+		<td class="style1"><strong>Project Milestone 2</strong> due at 4pm<br>
+		Resources: Milestone 2 description</td>
+	</tr>
+	<tr>
+		<td width="105">March 17</td>
+		<td align="center" width="353">
+		Classification and Prediction;
+		Frequent Patterns in Sets and Sequences</td>
+		<td class="style1">Read relevant sections in chapters 5 and 6. If you 
+		are curious to learn more about Additive Groves, you can take a look at 
+		our <a href="../../../papers/2007-ECML-Groves.pdf">paper</a>.<p>Homework 
+		exercises: 5.1</p>
+		<p>What are the key similarities and differences between bagging and 
+		boosting?</p>
+		<p>If a classifier has an accuracy of 95%, does that mean it is a good 
+		classifier? Justify your answer.</p>
+		<p>If a classifier has an area under the ROC curve of 0.95, does that 
+		mean it is a good classifier? Justify your answer.</p>
+		<p>What is the &quot;Apriori principle&quot; of frequent itemset mining? How does 
+		it help reduce the cost of frequent itemset mining?</p>
+		<p>For the database of market-basket transactions on slide 5, manually 
+		(= using paper and pencil) run the Apriori algorithm to find all 
+		itemsets with support of 2 or greater. In particular, for every k, 
+		perform the self-join L<sub>k</sub>*L<sub>k</sub> to generate C<sub>k+1</sub> 
+		and then prune itemsets in C<sub>k+1</sub> by checking if all their 
+		subsets of length k are in L<sub>k</sub>. For support counting, you do 
+		not have to use the hash-tree. Just count the support of the remaining 
+		candidates in C<sub>k+1</sub> directly in the database.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="105">March 24</td>
+		<td align="center" width="353">
+		Frequent Patterns in Sets and Sequences</td>
+		<td class="style1">Read relevant sections in chapter 5; for more 
+		information also take a look at the Tan et al. book (book 1 below).<br>
+		<br>Homework exercises: 5.3, 5.13, 5.14 (read the discussion in the book 
+		about the lift measure first)<br><br>Which task of the Apriori algorithm 
+		is improved by using the hash tree?<br><br>Why is FP-Growth often more 
+		efficient than Apriori?<br><br>What are maximal and closed frequent 
+		itemsets and why do we care about them?<br><br>For the table on slide 51 
+		and min_sup=2, do the following without further looking at slides 51 and 
+		52: (1) create the itemset lattice, (2) annotate each lattice node with 
+		the IDs of the transactions supporting the itemset in that node, and (3) 
+		identify all frequent, closed, and maximal frequent itemsets in the 
+		lattice. <br><br>Go step-by-step through the example on slide 79, 
+		creating the C_i and L_i sets from scratch. Prune candidates in C_i also 
+		by using the anti-monotonicity of SUM (assuming all values are 
+		non-negative). Now do the same for constraint AVG(S.price)&lt;3. Notice 
+		that AVG is not anti-monotone. What is different compared to the example 
+		with constraint Sum(S.price)&lt;5?</td>
+	</tr>
+	<tr>
+		<td width="105">March 31</td>
+		<td align="center" width="353">
+		Frequent Patterns in Sets and Sequences; 
+		Cluster Analysis</td>
+		<td class="style1">Read relevant sections in chapters 5, 8.3, and 7. If 
+		you are interested in some recent work that deals with a common sequence 
+		mining challenge--bursts of common events--take a look
+		<a href="../../../papers/2008-VLDB-BurstySequenceMining.pdf">here</a>.<br>
+		<br>Homework: 7.1, 7.2, 7.3<br><br>Starting with the 51 length-2 
+		candidates on slide 96 and assuming min_sup=2, do the following: (1) 
+		find all frequent length-2 sequences (L_2), then (2) create the set of 
+		all length-3 candidate sequences (C_3), and (3) prune all those length-3 
+		candidate sequences that contain a length-2 subsequence that is not in 
+		L_2.<br><br>Run PrefixSpan for the example data on slide 100 with 
+		min_sup = 2. Try to find all frequent sub-sequences that start with &quot;a&quot; 
+		and all those that start with &quot;b&quot;. How is PrefixSpan's way of exploring 
+		sub-sequences different from GSP? Think about differences and 
+		similarities between Apriori versus GSP and FP-growth versus PrefixSpan. </td>
+	</tr>
+	<tr>
+		<td width="105">April 1</td>
+		<td align="center" width="353">&nbsp;</td>
+		<td class="style1"><strong>Project Milestone 3</strong> due at 4pm<br>
+		Resources: Milestone 3 
+		description</td>
+	</tr>
+	<tr>
+		<td width="105">April 7</td>
+		<td align="center" width="353">Cluster Analysis<br>
+		<br>Comments about project 
+		milestones and quizzes</td>
+		<td class="style1">Read relevant sections in chapter 7. For additional 
+		material, also take a look at the Tan et al. book (book 1 below).<br>
+		<br>Homework: 7.6, 7.7<br><br>In class we discussed how the proximity 
+		matrix for hierarchical agglomerative clustering needs to be updated 
+		after each step (slides 67 to 69). The naive way of doing this would be 
+		to compute the distances between (C2 UNION C5) and the other clusters 
+		from scratch based on the individual data points in the clusters. 
+		Propose a more efficient update algorithm that can compute the new 
+		proximity matrix by only using the entries from the current proximity 
+		matrix, without having to access the individual data points in the 
+		clusters. Do this for the following similarity metrics: MIN, MAX, Group 
+		Average. If the computation is not possible based on the current 
+		proximity matrix alone, could you make it possible by adding a little 
+		extra information about each cluster?<br><br>Choose a few data points in 
+		2-D space and then run the hierarchical agglomerative clustering 
+		algorithm on these points, creating the dendrogram. Try to find examples 
+		that illustrate how using the MIN and MAX metric results in different 
+		clusterings.<br><br>BIRCH first creates a rough hierarchical 
+		partitioning of the data, then runs a clustering algorithm of choice to 
+		refine the partitions. What is the motivation for this approach? Try to 
+		give more than one argument.</td>
+	</tr>
+	<tr>
+		<td width="105">April 14</td>
+		<td align="center" width="353">Cluster Analysis</td>
+		<td class="style1">Read relevant sections in chapter 7. For additional 
+		material, also take a look at the Tan et al. book (book 1 below).<br>
+		<br>Homework: 7.8, 7.10, 7.15 (except CLARA, ROCK)<br><br>Explain the 
+		reason for the clustering results on slides 116 and 119 (DBSCAN 
+		problems).<br><br>What is the relationship between the Apriori algorithm 
+		for frequent itemset mining and the CLIQUE algorithm?<br><br>What is a 
+		similarity matrix and how does it help us determine if a clustering is 
+		good or not? How is it different from using the correlation between 
+		similarity matrix and cluster incidence matrix?</td>
+	</tr>
+	<tr>
+		<td width="105">April 12</td>
+		<td align="center" width="353">&nbsp;</td>
+		<td class="style1"><strong>Preliminary Milestone 4 predictions</strong> 
+		for Test data 1 due at 11:59pm</td>
+	</tr>
+	<tr>
+		<td width="105">April 16</td>
+		<td align="center" width="353">&nbsp;</td>
+		<td class="style1"><strong>New Preliminary Milestone 4 predictions</strong> 
+		for Test data 1 due at 11:59pm</td>
+	</tr>
+	<tr>
+		<td width="105">April 19</td>
+		<td align="center" width="353">&nbsp;</td>
+		<td class="style1"><b>Final project report</b> due at 11:59pm<br>
+		Resources: Milestone 4 
+		description, data 
+		description, Training data, 
+		Test data 1, Test data 2</td>
+	</tr>
+	<tr>
+		<td width="105">April 21</td>
+		<td align="center" width="353">Cluster Analysis; Course Summary</td>
+		<td class="style1">Read relevant sections in chapter 7. For additional 
+		material, also take a look at the Tan et al. book (book 1 below).<br>
+		<br>Study for the final exam.</td>
+	</tr>
+	<tr>
+		<td width="105">April 28</td>
+		<td align="center" width="353"><b>Final Exam</b></td>
+		<td class="style1">6-8pm in 108 WVH</td>
+	</tr>
+</table>
+<hr>
+<h3>Results for Milestone 4</h3>
+<table class="style5">
+	<tr>
+		<th class="style4">Team Name</th>
+		<th class="style4">April 12 ACC</th>
+		<th class="style4">&nbsp;</th>
+		<th class="style4">Team Name</th>
+		<th class="style4">April 16 ACC</th>
+		<th class="style4">&nbsp;</th>
+		<th class="style4">Team Name</th>
+		<th class="style4">Apr 19 ACC</th>
+		<th class="style4">&nbsp;</th>
+		<th class="style8">Team Name</th>
+		<th class="style8">Test 2 ACC</th>
+	</tr>
+	<tr>
+		<td class="style4">T. N.</td>
+		<td class="style6">79.45</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Team A</td>
+		<td class="style6">79.95</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">J57Klassy-Fire</td>
+		<td class="style6">81.54</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">J57Klassy-Fire</td>
+		<td class="style7">80.39</td>
+	</tr>
+	<tr>
+		<td class="style4">JZ</td>
+		<td class="style6">77.79</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">T. N.</td>
+		<td class="style6">79.60</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Team A</td>
+		<td class="style6">79.95</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">P. T. and D. N.</td>
+		<td class="style7">79.59</td>
+	</tr>
+	<tr>
+		<td class="style4">Team A</td>
+		<td class="style6">77.74</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">J57Klassy-Fire</td>
+		<td class="style6">79.11</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">VOTERs</td>
+		<td class="style6">79.85</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">M. E.</td>
+		<td class="style7">78.67</td>
+	</tr>
+	<tr>
+		<td class="style4">J57Klassy-Fire</td>
+		<td class="style6">77.15</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">X. C. and X. C.</td>
+		<td class="style6">78.87</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">T. N.</td>
+		<td class="style6">79.69</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">Kone</td>
+		<td class="style7">78.46</td>
+	</tr>
+	<tr>
+		<td class="style4">Paras</td>
+		<td class="style6">76.53</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">P. T. and D. N.</td>
+		<td class="style6">78.81</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">JZ</td>
+		<td class="style6">79.29</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">Team A</td>
+		<td class="style7">78.15</td>
+	</tr>
+	<tr>
+		<td class="style4">X. C. and X. C.</td>
+		<td class="style6">76.30</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">JZ</td>
+		<td class="style6">78.81</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">M. E.</td>
+		<td class="style6">79.23</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">X. C. and X. C.</td>
+		<td class="style7">77.90</td>
+	</tr>
+	<tr>
+		<td class="style4">P. T. and D. N.</td>
+		<td class="style6">75.61</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Kone</td>
+		<td class="style6">78.22</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">X. C. and X. C.</td>
+		<td class="style6">79.08</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">T. N.</td>
+		<td class="style7">77.00</td>
+	</tr>
+	<tr>
+		<td class="style4">Kone</td>
+		<td class="style6">75.48</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">A. P.</td>
+		<td class="style6">77.95</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">P. T. and D. N.</td>
+		<td class="style6">78.81</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">N. W. and P. G.</td>
+		<td class="style7">76.91</td>
+	</tr>
+	<tr>
+		<td class="style4">M. E.</td>
+		<td class="style6">74.16</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">VOTERs</td>
+		<td class="style6">77.28</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Kone</td>
+		<td class="style6">78.75</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">VOTERs</td>
+		<td class="style7">76.52</td>
+	</tr>
+	<tr>
+		<td class="style4">A. P.</td>
+		<td class="style6">74.03</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">DK</td>
+		<td class="style6">77.12</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">A. P.</td>
+		<td class="style6">77.95</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">A. P.</td>
+		<td class="style7">75.34</td>
+	</tr>
+	<tr>
+		<td class="style4">V. P.</td>
+		<td class="style6">73.11</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">N. W. and P. G.</td>
+		<td class="style6">77.00</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Paras</td>
+		<td class="style6">77.30</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">JZ</td>
+		<td class="style7">75.15</td>
+	</tr>
+	<tr>
+		<td class="style4">Spring</td>
+		<td class="style6">70.77</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">M. E.</td>
+		<td class="style6">76.61</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">DK</td>
+		<td class="style6">77.12</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">DK</td>
+		<td class="style7">73.97</td>
+	</tr>
+	<tr>
+		<td class="style4">N. W. and P. G.</td>
+		<td class="style6">70.39</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Paras</td>
+		<td class="style6">76.53</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">N. W. and P. G.</td>
+		<td class="style6">77.00</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">Spring</td>
+		<td class="style7">73.59</td>
+	</tr>
+	<tr>
+		<td class="style4">VOTERs</td>
+		<td class="style6">68.72</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">V. P.</td>
+		<td class="style6">75.29</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Spring</td>
+		<td class="style6">76.60</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">Paras</td>
+		<td class="style7">73.45</td>
+	</tr>
+	<tr>
+		<td class="style4">DK</td>
+		<td class="style6">67.56</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">Spring</td>
+		<td class="style6">75.23</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style6">V. P.</td>
+		<td class="style6">75.29</td>
+		<td class="style6">&nbsp;</td>
+		<td class="style7">V. P.</td>
+		<td class="style7">70.57</td>
+	</tr>
+</table>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Monday 1:30-2:30 PM, Wednesday 4:30-5:30 PM</li>
+	<li>Send email to set up an appointment if you cannot make it during these 
+	times</li>
+</ul>
+<p>TA: Bahar Qarabaqi</p>
+<ul>
+	<li>Office hours: Tuesday 4-5 PM, Thursday 10-11 AM</li>
+</ul>
+<p>Meeting times: Wed 6 - 9 PM<br>
+Meeting location: 108 WVH</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Quizzes: 20%</li>
+	<li>Project: 40%</li>
+	<li>Final exam: 40%</li>
+</ul>
+<h3>Textbook</h3>
+<p><img border="0" src="../2009-F-CS6220/images/HanKamberBookCover.gif" hspace="6">Jiawei Han and 
+Micheline Kamber. <a href="http://www.cs.uiuc.edu/homes/hanj/bk2/">Data Mining: 
+Concepts and Techniques</a>, 2nd edition, Morgan Kaufmann, 2006</p>
+<p>Recommended books for further reading:</p>
+<ol>
+	<li>&quot;Data Mining&quot; by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar (<a href="http://www-users.cs.umn.edu/~kumar/dmbook/index.php">http://www-users.cs.umn.edu/~kumar/dmbook/index.php</a>)</li>
+	<li>&quot;Machine Learning&quot; by Tom Mitchell (<a href="http://www.cs.cmu.edu/~tom/mlbook.html">http://www.cs.cmu.edu/~tom/mlbook.html</a>)</li>
+	<li>&quot;Introduction to Machine Learning&quot; by Ethem ALPAYDIN (<a href="http://www.cmpe.boun.edu.tr/~ethem/i2ml/">http://www.cmpe.boun.edu.tr/~ethem/i2ml/</a>)</li>
+	<li>&quot;Pattern Classification&quot; by Richard O. Duda, Peter E. Hart, David G. 
+	Stork (<a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html</a>)</li>
+	<li>&quot;The Elements of Statistical Learning: Data Mining, Inference, and 
+	Prediction&quot; by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (<a href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/">http://www-stat.stanford.edu/~tibs/ElemStatLearn/</a>)</li>
+</ol>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academichonesty.html">Academic 
+Integrity</a> Web page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

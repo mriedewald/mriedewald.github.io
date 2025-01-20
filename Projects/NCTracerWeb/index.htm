@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+<title>NCTracer Web Project</title>
+<style type="text/css">
+.style1 {
+	font-family: Calibri;
+}
+.style2 {
+	font-family: Calibri;
+	font-weight: bold;
+}
+.style3 {
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.style7 {
+	font-family: Calibri;
+}
+.style6 {
+	font-family: Calibri;
+	font-style: italic;
+}
+.style8 {
+	font-family: Calibri;
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.auto-style1 {
+	font-family: Calibri;
+	margin-left: 0px;
+	margin-right: 35px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	vertical-align: top;
+}
+.auto-style2 {
+	margin-right: 35px;
+}
+.auto-style3 {
+	margin-bottom: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="style1">NCTracer Web</h1>
+<p class="style1">We design novel distributed algorithms and build an open-source software 
+implementation of a Web-based system for collaborative automated and manual 
+tracing of neurites from light-microscopy stacks of images. This is a joint 
+project with the <a href="http://www.northeastern.edu/neurogeometry/">
+Neurogeometry Lab</a> of Prof. Armen Stepanyants. It builds on the success of 
+NCTracer, turning it from a standalone software that runs on a single machine to a collaborative 
+and scalable system that makes the power of distributed (cloud) computing 
+available to neuroscientists through a standard Web browser.</p>
+<h2 class="style1">Problem Description</h2>
+<h3 class="style1">The Driving Application: Brain Connectivity Analysis</h3>
+<p><span class="style1">NCTracer Web is designed to support collaborative 
+tracing and analysis of multi-terabyte-size brain images we receive from 
+national and international collaborators. In addition to the concrete challenges 
+posed by brain-connectivity analysis, we are designing distributed algorithms 
+that also apply to other domains, e.g., social-network analysis and SQL database 
+queries.</span></p>
+<p class="style1">
+<img alt="Overlapping image stacks" height="300" longdesc="2D projection of 9 overlapping 3D image stacks. (Source: Holtmaat Lab at Univeristy of Geneva)" src="brain3Dstacks.jpg" width="300" /> 
+(Source: Holtmaat Lab at University of Geneva, Switzerland)&nbsp;</p>
+<p class="style1">Light-microscopic imaging of a mouse brain produces about 
+20,000 3D image stacks, each typically 1024x1024x312 voxels and covering about 
+0.26x0.26x0.8 micrometers<sup>3</sup>, for a total of about 10 terabytes of TIFF 
+data. These image stacks overlap, but their microscope-recorded positions and 
+orientation are not sufficiently precise. For scientific analysis, the following 
+major processing steps are required:</p>
+<ol>
+	<li>
+	<p class="style1">Registration: Turn the individual stacks into a coherent 
+	3D image of the entire brain, ensuring correct connections across stack 
+	boundaries.</p>
+	</li>
+	<li>
+	<p class="style1">Automatic and manual tracing: Convert the image into a 
+	graph that represents axons and dendrites as nodes and edges. This is 
+	challenging in dense regions where many connections cross. Since manual 
+	tracing is too slow, we follow a combined approach of scalable automatic 
+	tracing, followed by manual tracing to correct potential errors.</p>
+	</li>
+	<li>
+	<p class="style1">Graph analytics: Once the image is represented as a graph, 
+	we can explore its structure, e.g., find common patterns or determine the 
+	region of influence of a neuron.</p>
+	</li>
+</ol>
+<p class="style1">
+<img alt="Dynamics of synapses" height="180" longdesc="Source: Stepanyants Lab at Northeastern University" src="synapses.jpg" width="551" /> 
+(Source: Stepanyants Lab at Northeastern University)</p>
+<p class="style1">In addition to static full-brain images, we also have access 
+to time-series data taken periodically over a large time span in the same 
+animal. These images cover only a fraction of the brain and only the outer 1mm 
+of it, but they enable studying dynamics of how synapses, which connect an axon 
+of a neuron to the dendrite of another, form or disappear over time.</p>
+<h3 class="style1">General Algorithmic Challenges</h3>
+<p class="style1">
+<img alt="Identified connections" height="250" src="brainGraph.jpg" width="392" /> 
+(Source: Zheng T. et al. Visualization of brain circuits using two-photon 
+fluorescence micro-optical sectioning tomography, Optics Express, 21(8): 
+9839-9850, 2013)</p>
+<p class="style1">Motivated by the brain-data analysis application and by 
+potential applications to other domains, we are studying algorithmic challenges 
+such as:</p>
+<ol>
+	<li>
+	<p class="style1">Image alignment in space and time: Align 20,000 3D image 
+	stacks <em>in space</em> and do this efficiently in a distributed system 
+	with tens or hundreds of machines. Align time-series data in <em>space and 
+	time</em>. What are general principles that apply to these two and other 
+	image-alignment problems so that new alignment challenges require only minor 
+	customization instead of having to design a completely new approach from 
+	scratch?</p>
+	</li>
+	<li>
+	<p class="style1">Top-k pattern search in graphs: Identify common structural 
+	patterns and search for specific graph patterns. When the number of result 
+	patterns is very large, we want to quickly return the most relevant 
+	patterns, then keep returning the next-most-relevant pattern instances until 
+	the user is satisfied.</p>
+	</li>
+	<li>
+	<p class="style1">Distributed joins: Joins are crucial for pattern search 
+	and correlation finding. Design effective distributed algorithms for common 
+	types of joins, including equi-join and band-join, but also the general 
+	theta-join. Can we prove near-optimality properties, e.g., for the largest 
+	amount of load assigned to any machine in the system?</p>
+	</li>
+	<li>
+	<p class="style1">Evolving graphs: What is the best way to store, manage, 
+	and query evolving graphs?</p>
+	</li>
+</ol>
+<h2><span class="style1">Publications and Software</span></h2>
+<p><span class="style1">We have a variety of strong initial results, including 
+provably near-optimal algorithms for distributed theta-joins and equi-joins. The 
+latter (as of late 2019) represent the best known distributed equi-join 
+algorithms---in terms of running time---for skewed input. However, many open 
+research problems are waiting for curious and motivated PhD students and post 
+docs. And we also have projects for undergraduate and Masters students.</span></p>
+<p class="style1">The current version of our NCTracer Web system demo is running
+<a href="https://129.10.48.247/NCT-Web/">here</a>. (We recommend using the 
+Chrome browser.) It is under development, therefore may be running at a 
+different address. Here is how it looked as of late September 2019:</p>
+<p class="style1">
+<img alt="Screenshot NCTracer Web" class="auto-style3" height="50%" longdesc="Manual tracing interface of NCTracer Web ver. Sep 2019" src="NCTracerWeb-screenshot.jpg" width="50%" /></p>
+<p class="style1">
+Rundong Li, Wolfgang Gatterbauer, Mirek Riedewald.
+Near-optimal distributed band-joins through recursive partitioning.
+To appear in <em>Proc. ACM SIGMOD Int. Conf. on Managament of Data</em>, 2020
+[<a href="../../papers/2020-SIGMOD-BandJoin.pdf">preprint</a>]</p>
+<p class="style1">
+Nikolaos Tziavelis, Wolfgang Gatterbauer, Mirek Riedewald.
+Optimal join algorithms meet top-k.
+To appear in <em>Proc. ACM SIGMOD Int. Conf. on Managament of Data</em>, 2020 (tutorial)
+[<a href="../../papers/2020-SIGMOD-AnyK-tutorial.pdf">preprint</a>]</p>
+<p class="style1">
+R. Li, N. Mi, M. Riedewald, Y. Sun, Y. Yao.
+<a href="../../papers/2019-DAPD-AbstractCostModels-preprint.pdf">Abstract Cost Models for Distributed Data-Intensive Computations</a>.
+<em>Distributed and Parallel Databases</em>, 37(3): 411-439, Springer, 2019
+[<a href="../../papers/2019-DAPD-AbstractCostModels-preprint.pdf">preprint</a>]</p>
+<p class="style1">
+R. Li, M. Riedewald, X. Deng. 
+<a href="https://dl.acm.org/doi/10.1145/3183713.3183728">Submodularity of Distributed Join Computation</a>.
+In <em>Proc. ACM SIGMOD Int. Conf. on Managament of Data</em>, pages 1237-1252, 2018
+[<a href="../../papers/2018-SIGMOD-equi-join.pdf">preprint</a>]</p>
+<p class="style1">
+X. Yang, D. Ajwani, W. Gatterbauer, P. K. Nicholson, M. Riedewald, and A. Sala.
+<a href="https://dl.acm.org/doi/10.1145/3178876.3186115">Any-k: Anytime Top-k Tree Pattern Retrieval in Labeled Graphs</a>.
+In <em>Proc. Int. Conf. on World Wide Web (WWW)</em>, pages 489-498, 2018
+[<a href="https://arxiv.org/abs/1802.06060">extended version</a>]</p>
+<p class="style1">
+R. Li, N. Mi, M. Riedewald, Y. Sun, Y. Yao.
+<a href="https://link.springer.com/chapter/10.1007/978-3-319-64283-3_11">A Case for Abstract Cost Models for Distributed Execution of Analytics Operators</a>.
+In <em>Proc. Int. Conf. on Big Data Analytics and Knowledge Discovery (</em>, pages 149-163, 2017
+(invited to special issue of <em>Distributed and Parallel Databases</em> presenting the <strong>Best Papers of DaWaK</strong>)
+[<a href="../../papers/2017-DaWaK-AbstractCostModels.pdf">paper</a>]</p>
+<p class="style1">
+A. Okcan and M. Riedewald.
+<a href="../../papers/2011-SIGMOD-ParallelJoins.pdf">Processing Theta-Joins using MapReduce</a>.
+In <em>Proc. ACM SIGMOD Int. Conf. on Managament of Data</em>, pages 949-960, 2011</p>
+<h2 class="style1">
+People</h2>
+<h3 class="style1">
+DATA Lab Team</h3>
+<p class="style1">
+Xinyan Deng (MS student, first job after graduation: Microsoft)<br />
+Rundong Li (PhD student, first job after graduation: Google)<br />
+<a href="http://khoury.northeastern.edu/~mirek/">Mirek Riedewald</a></p>
+<h3 class="style1">
+External Collaborators</h3>
+<p class="style1">
+<a href="https://web.northeastern.edu/kahaki/index.html">Seyed Kahaki</a> 
+(postdoc)<br />
+<a href="https://cos.northeastern.edu/people/armen-stepanyants/">Armen 
+Stepanyants</a></p>
+<h2 class="style1">
+Acknowledgements</h2>
+
+<p class="style1">
+This project would not have been possible without the creativity and hard work of the following students, most of them MS students, who contributed to the code
+(names shown in temporal order starting with the most recent contributors):
+Xuying ``Jeanne'' Shao, Shubham Muttepawar, Vivin Wilson, Ding Jin, Han Fu, Anubhuti Vyas, Chuhan Liu,
+Yogesh Gupta, Paurav Patel, Sarita Joshi, Yogiraj Awati, Dhavalkumar Patel, Ankur Shankar Shanbhag, 
+and Joe Sackett.</p>
+<p class="style1">Prof. Riedewald and his students' work on this project was supported by the National Science Foundation 
+(NSF) under award no.
+<a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1017793">
+1017793</a>, the National Institutes of Health (NIH) under award no. R01 
+NS091421, and by PwC (PricewaterhouseCoopers). Any opinions, findings, and conclusions or recommendations 
+expressed in this material are those of the authors and do not necessarily 
+reflect the views of NSF, NIH, or PwC.</p>
+<p>
+<img src="../../images/National_Science_Foundation_Seal.png" width="60" height="60" class="auto-style1"/><img alt="National Institutes of Health (NIH) - Turning Discovery into Health" class="auto-style2" height="60" src="nih-logo-color.png" width="390" /><img alt="PwC Logo" height="60" src="PricewaterhouseCoopers_Logo.svg.png" width="79" /></p>
+
+</body>
+
+</html>

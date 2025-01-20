@@ -1,0 +1,273 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6220: Data Mining Techniques</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+.style3 {
+	border-color: #000000;
+	border-width: 0;
+}
+.style4 {
+	border: 1px solid #808080;
+}
+.auto-style1 {
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 6220: Data Mining Techniques</h2>
+<p>This course covers various aspects of data mining including data 
+preprocessing, classification, ensemble methods, association rules, sequence 
+mining, and cluster analysis. The class project involves hands-on practice of 
+mining useful knowledge from a large data set.</p><hr>
+<h3>News</h3>
+<p>[04/12/2012] All class material is now available online. Good luck for the 
+project and final exam preparation!</p>
+<hr>
+<h3>Lectures</h3>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td style="width: 58px"><b>Date</b></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td class="style2">Remarks and Homework</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 9</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture1.1-Introduction.pdf">Introduction</a>;
+		<a href="Slides/Lecture1.2-Preprocessing.pdf">Data Preprocessing</a></td>
+		<td class="style1">Read chapters 1 (introduction), 2 (getting to know 
+		your data), and 3 (preprocessing) in the textbook. To get started with 
+		Weka and experience what we discussed in the lecture, do the optional 
+		homework that is available on Blackboard.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 16</td>
+		<td align="center" width="353">
+		No class: MLK Day</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 23</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">
+		Classification/Prediction: decision trees and overfitting</a></td>
+		<td class="style1">Read relevant sections in chapter 8 (classification: 
+		basic concepts). Make sure you know what overfitting means and that you 
+		understand the overfitting example (big versus small tree) we discussed 
+		in class.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 30</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Decision trees; 
+		statistical learning theory</a></td>
+		<td class="style1">Read relevant sections in chapter 8 (classification: 
+		basic concepts). For more information, also look at references [1] for 
+		trees and [5] for statistical decision theory (see below).</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 6</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Statistical 
+		learning theory; nearest neighbor; Bayes' theorem</a></td>
+		<td class="style1">Read relevant sections in chapter 8 (classification: 
+		basic concepts) and 9 (classification: advanced methods). For more information, also look at reference [5] for statistical decision theory (see below).</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 7</td>
+		<td align="center" width="353">
+		HW 1 due (11pm)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 13</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Naive Bayes; 
+		joint distribution; Bayesian networks</a></td>
+		<td class="style1">Read relevant sections in chapter 8 (classification: 
+		basic concepts) and 9 (classification: advanced methods). For more 
+		information about Bayesian classification, also look at the other 
+		references, e.g., [2] and [6]. Go over the Naive Bayes example and the 
+		examples for computing probabilities of interest from the joint 
+		probability table. Make sure you can compute such probabilities for a 
+		given example. </td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 20</td>
+		<td align="center" width="353">
+		No class: Presidents' Day</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 24</td>
+		<td align="center" width="353">
+		<span class="auto-style1"><strong>Extra class</strong></span>: makeup 
+		day for Monday holidays<br>
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Bayesian 
+		networks; artificial neural networks</a></td>
+		<td class="style1">Read relevant sections in chapter 9 (classification: 
+		advanced methods). For more information about Bayesian classification, 
+		also look at the other references, e.g., [2] and [6]. Go carefully over 
+		the Bayesian network computation examples and also the backpropagation 
+		example in the textbook.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 27</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">SVMs; regression</a></td>
+		<td class="style1">Read relevant sections in chapter 9 (classification: 
+		advanced methods). If you are interested in more information about SVMs, 
+		let me know and I can point you to an interesting survey article.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 1</td>
+		<td align="center" width="353">
+		HW 2 due (11pm)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 5</td>
+		<td align="center" width="353">
+		No class: Spring Break</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 12</td>
+		<td align="center" width="353">
+		<strong>Midterm Exam</strong></td>
+		<td class="style1">Same time and location as lectures.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 19</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Accuracy and 
+		error measures; ensemble methods</a></td>
+		<td class="style1">Study the various model quality measures. Read 
+		section 8.5 (model evaluation and selection) and the beginning of 
+		section 8.6 (techniques to improve classification accuracy).</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 26</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Ensemble methods</a>; 
+		<a href="Slides/Lecture3-ItemsetsSequences.pdf">frequent pattern mining</a></td>
+		<td class="style1">Read section 8.6 (techniques to improve 
+		classification accuracy) and relevant sections in chapter 6 (mining 
+		frequent patterns, associations, and correlations). Run the Apriori 
+		algorithm manually on a small example. Observe when and how it is 
+		pruning the search space.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 2</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture3-ItemsetsSequences.pdf">Frequent pattern mining</a></td>
+		<td class="style1">Read the relevant sections in chapters 6 (mining 
+		frequent patterns, associations, and correlations) and 7 (advanced 
+		frequent pattern mining). For FP-growth and sequence mining, focus on 
+		the main ideas, not the algorithmic details.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 7</td>
+		<td align="center" width="353">
+		Project report 1 due (11pm)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 9</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture4-Clustering.pdf">Clustering</a></td>
+		<td class="style1">Read the relevant sections in chapters 10 (cluster 
+		analysis: basic concepts and methods) and 11 (advanced cluster 
+		analysis).</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 14</td>
+		<td align="center" width="353">
+		Project report 2 due (11pm)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 16</td>
+		<td align="center" width="353">
+		No class: Patriots' Day</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 19</td>
+		<td align="center" width="353">
+		Final project report due (11pm)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">April 23</td>
+		<td align="center" width="353">
+		Final exam</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	</table>
+<hr>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Wednesday 10:30am-noon in 332 WVH</li>
+	<li>Send email to set up an appointment if you cannot make it during these 
+	times</li>
+</ul>
+<p>TA: We have no TA this semester :-(</p>
+<p>Lecture times: Mon 6 - 9 PM<br>
+Lecture location: Ryder Hall 429</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Homework: 40%</li>
+	<li>Midterm exam: 25%</li>
+	<li>Final exam: 30%</li>
+	<li>Participation: 5%</li>
+</ul>
+<h3>Textbook</h3>
+<p>Jiawei Han, Micheline Kamber, and Jian Pei.
+<a href="http://www.cs.uiuc.edu/~hanj/bk3/">Data Mining: 
+Concepts and Techniques</a>, 3rd edition, Morgan Kaufmann, 2011</p>
+<p>Recommended books for further reading:</p>
+<ol>
+	<li>&quot;Data Mining&quot; by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar (<a href="http://www-users.cs.umn.edu/~kumar/dmbook/index.php">http://www-users.cs.umn.edu/~kumar/dmbook/index.php</a>)</li>
+	<li>&quot;Machine Learning&quot; by Tom Mitchell (<a href="http://www.cs.cmu.edu/~tom/mlbook.html">http://www.cs.cmu.edu/~tom/mlbook.html</a>)</li>
+	<li>&quot;Introduction to Machine Learning&quot; by Ethem ALPAYDIN (<a href="http://www.cmpe.boun.edu.tr/~ethem/i2ml/">http://www.cmpe.boun.edu.tr/~ethem/i2ml/</a>)</li>
+	<li>&quot;Pattern Classification&quot; by Richard O. Duda, Peter E. Hart, David G. 
+	Stork (<a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html</a>)</li>
+	<li>&quot;The Elements of Statistical Learning: Data Mining, Inference, and 
+	Prediction&quot; by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (<a href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/">http://www-stat.stanford.edu/~tibs/ElemStatLearn/</a>)</li>
+	<li>&quot;Pattern Recognition and Machine Learning&quot; by Christopher M. Bishop (<a href="http://research.microsoft.com/en-us/um/people/cmbishop/prml/">http://research.microsoft.com/en-us/um/people/cmbishop/prml/</a>)</li>
+</ol>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academichonesty.html">Academic 
+Integrity</a> Web page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

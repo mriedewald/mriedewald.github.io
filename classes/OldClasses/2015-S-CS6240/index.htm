@@ -1,0 +1,216 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6240: Parallel Data Processing in MapReduce</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+.style3 {
+	border-color: #000000;
+	border-width: 0;
+}
+.style4 {
+	border: 1px solid #808080;
+}
+.auto-style4 {
+	color: #000000;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 6240: Parallel Data Processing in MapReduce</h2>
+<p>This course covers techniques for analyzing very large data sets. We 
+introduce the MapReduce programming model and the core technologies it relies on 
+in practice, such as a distributed file system. Related approaches and 
+technologies from distributed databases and Cloud Computing will also be 
+introduced. Particular emphasis is placed on practical examples and hands-on 
+programming experience. Both plain MapReduce and database-inspired advanced 
+programming models running on top of a MapReduce infrastructure will be used.</p><hr>
+<h3>News</h3>
+<p class="auto-style4"><strong>Acknowledgment:</strong> This course was kindly supported by an AWS 
+in Education Grant award from <strong>Amazon.com, Inc.</strong></p>
+<hr>
+<h3>Lectures</h3>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td style="width: 58px"><strong>Week of:</strong></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td class="style2">Remarks</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 13</td>
+		<td align="center" width="353">
+		Syllabus<br>Overview: data and harware trends<br>Cloud computing</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 20</td>
+		<td align="center" width="353">
+		Scalability and metrics<br>Amdahl's Law<br>Google File System, Hadoop's 
+		HDFS</td>
+		<td class="style1">Assignment 1 out. Due Feb 1.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Jan 27</td>
+		<td align="center" width="353">
+		MapReduce and Hadoop</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 3</td>
+		<td align="center" width="353">
+		Fundamental Techniques<br>(Includes: in-mapper combining, sorting, 
+		secondary<br>sorting)</td>
+		<td class="style1">Assignment 2 out. Due Feb 15.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 10</td>
+		<td align="center" width="353">
+		Basic Algorithms<br>(Includes: order inversion, per-record computation,<br>
+		group-by, global counters, random sampling and shuffling, quantiles,<br>
+		top-k)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 17</td>
+		<td align="center" width="353">
+		Basic Algorithms: Advanced (Includes: reduce-side join, replicated join,<br>
+		semi-join with Bloom filter)</td>
+		<td class="style1">Assignment 3 out. Due Mar 1.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Feb 24</td>
+		<td align="center" width="353">
+		Pig and Pig Latin</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 3</td>
+		<td align="center" width="353">
+		Relational Databases</td>
+		<td class="style1">Assignment 4 out. Due Mar 22.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 10</td>
+		<td align="center" width="353">
+		No class. Spring Break.</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 17</td>
+		<td align="center" width="353">
+		CAP theorem<br>HBase<br>Hive</td>
+		<td class="style1">Project starts: team forming, proposal. Due Mar 29.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 24</td>
+		<td align="center" width="353">
+		<strong>Midterm exam</strong></td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Mar 31</td>
+		<td align="center" width="353">
+		Graph Algorithms<br>(Includes: single source shortest path, PageRank)</td>
+		<td class="style1">Project progress report assignment out. Due Apr 12.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 7</td>
+		<td align="center" width="353">
+		Intelligent Partitioning<br>(Includes: Pairs and Stripes, theta-join)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 14</td>
+		<td align="center" width="353">
+		Data Mining 1: clustering, classification</td>
+		<td class="style1">Project final report assignment out. Due Apr 26.<br>
+		Project presentation assignment out. Due Apr 27.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 21</td>
+		<td align="center" width="353">
+		Data Mining 2: ensemble methods, regression, matrix manipulation</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Apr 28</td>
+		<td align="center" width="353">
+		Project presentations</td>
+		<td class="style1">Same time and location as lecture.</td>
+	</tr>
+	</table>
+<hr>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: see NU Online</li>
+	<li>Send email (including the TAs) to set up an appointment if you cannot make it during these 
+	times.</li>
+</ul>
+<p>TAs:</p>
+<ul>
+	<li>&nbsp;Bahar Qarabaqi<ul>
+		<li>Office hours: see NU Online</li>
+	</ul>
+	</li>
+	<li>Other TAs and office hours: see NU Online</li>
+</ul>
+<p>Meeting times and location: check registrar system for up-to-date info</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Homework/project: 40%</li>
+	<li>Midterm exam: 40%</li>
+	<li>Participation: 10%</li>
+	<li>Check-your-knowledge quizzes: 10%</li>
+</ul>
+<h3>Reading Materials</h3>
+<ol>
+	<li>&quot;Hadoop: The Definitive Guide&quot; by Tom White, 3rd edition. (Available 
+	from Safari Books Online.)</li>
+	<li>&quot;MapReduce Design Patterns&quot; by Donald Miner and Adam Shook (Available 
+	from Safari Books Online.)</li>
+	<li>&quot;Hadoop in Practice&quot; by Alex Holmes (Available from Safari Books Online.)</li>
+	<li>&quot;Hadoop in Action&quot; by Chuck Lam&nbsp; (Available from Safari Books 
+	Online.)</li>
+	<li>&quot;Data-Intensive Text Processing with MapReduce&quot; by Jimmy Lin and Chris 
+	Dyer. (Available online, see
+	<a href="http://www.umiacs.umd.edu/~jimmylin/book.html">http://www.umiacs.umd.edu/~jimmylin/book.html</a> 
+	for info.)</li>
+	<li>&quot;HBase: The Definitive Guide&quot; by Lars George. (Available from Safari 
+	Books Online.)</li>
+	<li>Check out Yahoo!'s
+	<a href="http://developer.yahoo.com/hadoop/tutorial/index.html">Hadoop 
+	tutorial</a> for additional information. Notice that it uses the old 
+	MapReduce API.</li>
+</ol>
+<p>Safari Books Online at NEU:
+<a href="http://proquest.safaribooksonline.com.ezproxy.neu.edu/">http://proquest.safaribooksonline.com.ezproxy.neu.edu/</a> 
+(might have changed in the meantime)</p>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academicintegrity/">Academic 
+Integrity</a> Web page.</p>
+
+</body>
+
+</html>

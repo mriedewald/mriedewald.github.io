@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type" />
+<title>Scolopax Project</title>
+<style type="text/css">
+.style1 {
+	font-family: Calibri;
+}
+.style2 {
+	font-family: Calibri;
+	font-weight: bold;
+}
+.style3 {
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.style7 {
+	font-family: Calibri;
+}
+.style6 {
+	font-family: Calibri;
+	font-style: italic;
+}
+.style8 {
+	font-family: Calibri;
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.auto-style1 {
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="style1">The Scolopax Project<img alt="Scolopax logo" class="style3" height="156" src="../../images/ScolopaxLogo-160.jpg" style="float: right" width="160" /></h1>
+<p class="style1">Data-intensive science is concerned with 
+collecting, archiving, and analyzing the vast amounts of data being produced and 
+accumulated by modern science. Turning scientific raw data into knowledge will 
+be the key for future scientific discoveries. A typical data-intensive science 
+project has the following major steps:</p>
+<ol>
+	<li class="style1">Collection and creation of raw data, e.g., from sensors, human 
+	observers, and simulations</li>
+	<li class="style1">Combination of different datasets to create a task-specific input 
+	dataset</li>
+	<li class="style1">Exploratory analysis to discover new patterns</li>
+	<li class="style1">Confirmatory analysis, e.g., creating new hypotheses from discovered 
+	patterns and testing these hypotheses on <em>newly collected data</em></li>
+</ol>
+<p><span class="style1">The focus of Scolopax is on </span>
+<span class="style2">exploratory analysis</span><span class="style1">. An 
+essential aspect of exploratory analysis is the use of non-parametric (or 
+semi-parametric) data mining techniques. These techniques enable scientists to 
+train accurate prediction models of complex processes even in the absence of a 
+complete understanding of these processes. Using such models for analysis is 
+preferable compared to simply summarizing the raw data directly. A model with 
+good generalization performance does not overfit to noise or a specific data 
+sample and hence captures the natural process more accurately. Unfortunately, 
+complex prediction models per se are not intelligible. They cannot be used 
+directly for answering questions like 'Which environmental features have the 
+strongest effect on bird abundance and how do they interact?'. To make data 
+mining models 'digestible' and to provide end users with new hypotheses, we need 
+to 'open up the blackbox', i.e., provide tools for determining important 
+relationships that the model has learned. This can be done by summarizing a 
+complex model with simpler patterns like partial dependence functions. The 
+number of such model summaries is overwhelming: each 'slice' or 'dice' of a 
+lower-dimensional subspace of the original data space could contain an 
+interesting model summary.</span></p>
+<p class="style1"><span class="auto-style1">Warning</span>: Since Scolopax can 
+rapidly explore a large search space, it is prone to discovering <em>spurious 
+patterns</em> as well real ones. Good scientific practice requires all patterns 
+discovered to be verified on newly collected data, i.e., based on a specially 
+designed experiment where the pattern informs the hypothesis. At the very least, 
+consult your friendly neighborhood domain expert before getting too excited 
+about a surprising new pattern :)</p>
+<p class="style1">
+<img alt="Scolopax overview" height="435" src="../../images/ScolopaxOverview.gif" width="876" /></p>
+<p class="style1">The Scolopax project addresses various data management 
+challenges to enable 
+exploratory analysis (see system overview above). Scientists will be able to express 
+their exploration preferences in a user-friendly language. The preference 
+specification will then be automatically transformed into a formal query, for 
+which Scolopax finds an efficient execution plan for a multi-processor 
+environment like a cluster or Cloud. Other Scolopax components are concerned 
+with post-processing of the discovered patterns and efficient training of data 
+mining models. Our approach is validated through our ongoing collaboration with 
+the <a href="http://www.birds.cornell.edu">Cornell Lab of Ornithology</a>, using 
+citizen science data and other data resources organized by the ornithological 
+community in the <a target="_top" href="http://www.avianknowledge.net/">Avian Knowledge Network</a> 
+(AKN).</p>
+<h2 class="style1">System Prototype</h2>
+
+<p class="style1">The Scolopax system is briefly described in a
+<a href="../../papers/2013-VLDB-ScolopaxDemo.pdf">demonstration paper</a> 
+published at VLDB 2013. It currently consists of four different components: 
+Summary Ranker, Cluster Ranker, Correlation Finder, and Performance Monitor. All 
+four components work with summaries that are generated on-the-fly for a data mining model. 
+This model was trained on a large 
+high-dimensional
+<a href="http://www.avianknowledge.net/content/features/archive/eBird_Ref">data 
+set</a> containing crowd-sourced data about bird sightings reported by citizen scientists through the
+<a href="http://www.ebird.org">eBird</a> project. Processing happens in parallel 
+on a 44-core cluster running the <a href="http://hadoop.apache.org/">Hadoop</a> 
+version of MapReduce. Results from previous analyzes are stored in an HBase 
+database on the same cluster to speed up future queries.</p>
+<p class="style1"><strong>Summary Ranker</strong>: version 
+<a href="SummaryRanker.htm">with frames</a> or
+<a href="http://129.10.112.225:8080/ScolopaxWebVLDB/">without frames</a>. This 
+component supports search for interesting model summaries. Each summary is a 
+partial-dependence plot on some summary attribute, visualizing the effect of 
+this attribute on the observation probability of some bird species by taking the 
+average effect of all other attributes into account. For instance, a strong 
+down-trend in the summary for YEAR suggests a decline of the species in the 
+corresponding region. The user can select bird species, regions of interest, and 
+a measure to rank the model summaries created for different attributes by their 
+&quot;interestingness&quot;. (Scolopax will generate and rank all one-dimensional 
+summaries according to the specifications.) After the ranked list of results is 
+presented, the user can post-process it by filtering out groups of summaries 
+that are not of interest. 
+The summary ranker uses <a href="http://hbase.apache.org/">HBase</a> 
+to store and manage query results. If a submitted query and ranking measure are 
+found in the database, the old results are re-used, speeding up processing 
+significantly. If the same query is used with a different ranking measure, some 
+speedup is achieved since existing summaries are re-used, but 
+have to be re-ranked on-the-fly. For new queries, all summaries are computed 
+from scratch and ranked on-the-fly.</p>
+<p class="style1"><strong>Cluster Ranker</strong>: version 
+<a href="ClusterRanker.htm">with frames</a> or
+<a href="http://129.10.112.225:8080/ScolopaxWebClusteringVLDB/">without frames</a>. 
+This component supports the discovery of spatio-temporal movements of bird 
+species, in particular migration. It works with the same kind of model summaries 
+as the Summary Ranker. Instead of ranking individual summaries, the Cluster 
+Ranker first clusters summaries on temporal attributes by their similarity. Then 
+the clusterings are ranked based on how different the cluster centers are from 
+each other. (This indicates regionally different temporal trends.)</p>
+<p class="style1"><strong>Correlation Finder</strong>: version 
+<a href="CorrelationFinder.htm">with frames</a> or
+<a href="http://129.10.112.225:8080/ScolopaxWebJoinsVLDB/">without frames</a>. 
+This component supports discovery of correlations between model summaries. It 
+can be used to find potential habitat competition between species (find two 
+species that show complementary abundance trends in a certain region over the 
+years) and diverse migration trends (find two species with different seasonal 
+pattern of abundance). The correlation finder also works with large sets of 
+model summaries. Users specify a join query through an intuitive interface. The 
+join result is computed in parallel using our
+<a href="../../papers/2011-SIGMOD-ParallelJoins.pdf">recently proposed 
+techniques</a>.</p>
+<p class="style1"><strong>Performance Monitor</strong>: version 
+<a href="PerformanceMonitor.htm">with frames</a> or
+<a href="http://129.10.112.225:8080/ScolopaxWebPMVLDB/">without frames</a>. This 
+component visualizes the performance improvement resulting from our research 
+compared to the previous state of the art. It executes the summary ranker and 
+continuously reports the progress in terms of summaries computed.</p>
+<h2 class="style1">Selected Results</h2>
+<p class="style1">
+[A. Okcan and M. Riedewald. <a href="../../papers/2014-SIGMOD-AntiCombining.pdf">Anti-Combining for MapReduce</a>. In Proc. ACM 
+SIGMOD Int. Conf. on Managament of Data, 2014 ]<br />
+We propose the notion of anti-combining to reduce cost and hence optimize for 
+throughput in MapReduce systems. Anti-combining pushes functionality from 
+Mappers to Reducers in order to decrease network transfer and local disk I/O 
+cost. This is achieved through syntactic re-writing that can be applied 
+automatically to any given MapReduce program. The modified program then performs 
+fine-grained local optimizations at runtime in order to reduce the cost of the 
+data transfer between Mappers and Reducers. </p>
+<p class="style1">
+[A. Okcan, M. Riedewald, B. Panda, and D. Fink.
+<a href="../../papers/2013-VLDB-ScolopaxDemo.pdf">Scolopax: Exploratory Analysis 
+of Scientific Data</a>. In Proc. of the VLDB Endowment (PVLDB), 2013]<br />
+This paper provides an overview of the Scolopax system as of the end of summer, 
+2013.</p>
+<p>
+[<span class="style7">A. Okcan and M. Riedewald. 
+<a href="../../papers/2011-SIGMOD-ParallelJoins.pdf">Processing Theta-Joins using MapReduce</a>. 
+In
+</span><span class="style6">Proc. ACM SIGMOD Int. Conf. on Managament of Data</span><span class="style7">, 
+pages 949-960, 2011]<br />
+To find related summaries, we need flexible join operators, not just standard 
+equi-joins. We developed novel techniques for efficiently computing arbitrary 
+theta-joins in parallel, with particular focus on MapReduce systems. Our most 
+general algorithm is randomized and provably achieves a near-optimal low latency. For popular join predicates, including equi-, 
+inequality-, and epsilon-join, we present specialized techniques that work well, 
+no matter how skewed the data distribution.</span></p>
+<p><span class="style1">[B. Panda, M. Riedewald, and D. Fink.
+<a href="../../papers/2010-ICDE-ModelSummaries.pdf">The Model Summary Problem and a Solution for 
+Trees</a>. In </span><span class="style6">Proc. IEEE Int. Conf. on Data
+Engineering (ICDE)</span><span class="style1">, pages 449-460, 2010]<br />
+Model summaries form the basis for exploratory analysis. For a typical analysis, 
+millions to billions of such summaries have to be created. We show how to 
+exploit workload properties to reduce computation time asymptotically, perform 
+fast batch computation, and effectively parallelize the workload in MapReduce.</span></p>
+<p class="style1">[A. Lachmann 
+	and M. Riedewald. 
+<a target="_blank" href="../../papers/2008-VLDB-BurstySequenceMining.pdf">Finding Relevant Patterns in Bursty Sequences</a>. 
+In <i>Proc. of the VLDB Endowment (PVLDB)</i>, 1(1):78-89, 2008]<br />
+Finding relevant frequent patterns in bursty sequences is expensive and suffers 
+from a large number of un-interesting patterns with high support. We propose a 
+novel approach that addresses both problems and prove important properties 
+regarding preservation of interesting sequences.</p>
+<p class="style1">[D. Sorokina, 
+	R. Caruana, M. Riedewald, and D. Fink.
+	<a target="_blank" href="../../papers/2008-ICML-Interactions.pdf">Detecting 
+	Statistical Interactions with Additive Groves of Trees</a>. In <i>Proc. 
+International Conference on Machine Learning (ICML)</i>, pages 1000-1007, 2008]<br />
+[D. Sorokina 
+, R. Caruana, M. Riedewald, W. M. Hochachka, and S. Kelling. 
+<a href="../../papers/2009-DDDM-InteractionsOrnithologyData.pdf">Detecting and 
+	Interpreting Variable Interactions in Observational Ornithology Data</a>. In <i>Proc. IEEE Int. Workshop on Domain Driven Data Mining (DDDM)</i>, 2009]<br />
+Model summaries inherently lose information compared to the full model. To 
+better understand when a summary might be hiding important information, we need 
+to understand which variables strongly interact. Our techniques identify such 
+variables using a mostly non-parametric approach.</p>
+<p class="style1">[B. Panda, M. 
+Riedewald, J. Gehrke, and S. B. Pope:
+<a target="_blank" href="../../papers/2007-ICDM-ISAT.pdf">High-Speed Function 
+Approximation</a>. In <i>Proc. IEEE Int. Conf. on Data Mining (ICDM)</i>, 
+pages 613-618, 2007]<br />
+While traditional data mining research usually focused on model accuracy and 
+training cost, exploratory analysis shifts the bottleneck to the prediction 
+phase, when the model is actually being used. We propose approximation techniques 
+that significantly speed up precition time, while 
+maintaining high prediction accuracy.</p>
+<p class="style1">In addition to core computer science contributions, this 
+project (and its predecessor) has also contributed to domain science results:</p>
+<p class="style1">[D. Fink, W. 
+	M. Hochachka, B. Zuckerberg, D. W. Winkler, B. Shaby, M. A. Munson, G. 
+	Hooker, M. Riedewald, D. Sheldon, and S. Kelling.
+	<a href="../../papers/2010-EcoApps-STEM.pdf">Spatiotemporal Exploratory Models for 
+	Broad-Scale Survey Data</a>. Ecological Applications, 20(8):2131-2147, 2010]<br />
+[S. Kelling, 
+W. M. Hochachka, D. Fink, M. Riedewald, R. Caruana, G. Ballard, and G. Hooker.
+<a href="http://www.bioone.org/toc/bisi/59/7">Data Intensive Science: A New 
+Paradigm for Biodiversity Studies</a>. <i>BioScience</i>, 57(7):613-620, 2009]<br />
+[W. M. Hochachka, R. Caruana, D. Fink, A. Munson, M. Riedewald, D. Sorokina, and 
+S. Kelling. <a href="../../papers/2007-JofWildlifeMgmt-Mining.pdf">Data-Mining Discovery of Pattern and Process in Ecological Systems</a>. In <i>
+Journal of Wildlife Management</i>, 71(7):2427--2437, 2007]</p>
+<h2 class="style1">People</h2>
+<p><span class="style1"><a href="../../index.htm">Mirek Riedewald</a></span><br class="style1">
+<span class="style1">
+<a href="http://www.birds.cornell.edu/is/staff/staff_bios.html#daniel">Daniel Fink</a> (Cornell Lab of Ornithology)</span><br class="style1">
+<span class="style1"><a href="http://www.ccs.neu.edu/home/okcan">Alper Okcan</a> (Northeastern U. Ph.D. student)</span></p>
+<h2 class="style1">Collaborators</h2>
+<p>
+<span class="style1">
+<a href="http://www.birds.cornell.edu/sfo/staff.html#Hochachka">Wesley M. Hochachka</a> (Cornell Lab of Ornithology)</span><br class="style1">
+<span class="style1">
+<a href="http://www.bscb.cornell.edu/~hooker/">Giles Hooker</a> 
+(Cornell Dept. of Biological Statistics and Computational Biology)</span><br class="style1">
+<span class="style1">
+<a href="http://www.birds.cornell.edu/it/staff/staff_steve.html">Steve Kelling</a> (Cornell Lab of Ornithology)</span><br class="style1">
+<span class="style1">
+<a href="http://www.birds.cornell.edu/is/staff/staff_bios.html#kevin">Kevin Webb</a> (Cornell Lab of Ornithology)</span></p>
+<h2 class="style1">Alumni</h2>
+<p>
+<span class="style1">Gawande Pratik Bhagwat (Northeastern U. MS student while 
+working on the project)<br />
+Priyank Desai (Northeastern U. MS student while 
+working on the project)<br />
+Sahib S. Dhindsa (Cornell ISST undergrad student while working on the 
+project)</span><br class="style1">
+<span class="style1">Alexander Lachmann (visiting Cornell CS undergrad student while working on the project)<br />
+Shweta S. Memane (Northeastern U. MS student while working on the project)<br />
+<a href="http://www.cs.cornell.edu/~bpanda/">Biswanath Panda</a> 
+(Cornell Ph.D. student while working on the project)<br />
+Mathi Ramakrishnan (Northeastern U. MS student while working on the project)<br />
+Baturalp Torun (Northeastern U. MS student while working on the project)</span><br class="style1">
+</p>
+<h2 class="style1">
+Acknowledgements</h2>
+<p>
+<img src="../../images/National_Science_Foundation_Seal.png" width="100" height="100" class="style8" style="float: left"><span class="style1">This 
+material is based upon work supported by the National Science Foundation under 
+Grant Nos.
+<a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0612031">0612031</a>, 
+<a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=0920869">
+0920869</a>, and
+<a href="http://www.nsf.gov/awardsearch/showAward.do?AwardNumber=1017793">
+1017793</a>. Any opinions, findings, and conclusions or recommendations 
+expressed in this material are those of the authors and do not necessarily 
+reflect the views of the National Science Foundation.</span></p>
+
+</body>
+
+</html>

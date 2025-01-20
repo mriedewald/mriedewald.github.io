@@ -1,0 +1,250 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6240: Parallel Data Processing in MapReduce</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+.style3 {
+	border-color: #000000;
+	border-width: 0;
+}
+.style4 {
+	border: 1px solid #808080;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 6240: Parallel Data Processing in MapReduce</h2>
+<p>This course covers techniques for analyzing very large data sets. We 
+introduce the MapReduce programming model and the core technologies it relies on 
+in practice, such as a distributed file system. Related approaches and 
+technologies from distributed databases and Cloud Computing will also be 
+introduced. Particular emphasis is placed on practical examples and hands-on 
+programming experience. Both plain MapReduce and database-inspired advanced 
+programming models running on top of a MapReduce infrastructure will be used.</p><hr>
+<h3>News</h3>
+<p>Link to Piazza discussion forum:
+<a href="https://piazza.com/northeastern/fall2013/cs6240/home">https://piazza.com/northeastern/fall2013/cs6240/home</a></p>
+<p><strong>Acknowledgment:</strong> This course was kindly supported by an AWS 
+in Education Grant award from <strong>Amazon.com, Inc.</strong></p>
+<p>[11/20/2013] Audio and slides from 11/19 lecture available on Blackboard</p>
+<hr>
+<h3>Lectures</h3>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td style="width: 58px"><b>Date</b></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td class="style2">Remarks and Reading Assignments</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Sep 10</td>
+		<td align="center" width="353">
+		Syllabus and overview, introduction, simple algorithms</td>
+		<td class="style1">Read more about data centers and &quot;data center as a 
+		computer&quot;
+		<a href="http://www.morganclaypool.com/doi/abs/10.2200/S00516ED2V01Y201306CAC024">
+		here</a>.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Sep 17</td>
+		<td align="center" width="353">
+		Measures of success, Amdahl's Law, Google File System,
+		MapReduce overview, Word Count</td>
+		<td class="style1">Read the
+		<a href="http://research.google.com/archive/gfs.html">Google File System</a> 
+		paper. Read the
+		<a href="http://research.google.com/archive/mapreduce.html">Google MapReduce 
+		paper</a>. Look carefully at the word count example and 
+		make sure you can explain how the computation works. Read the following chapters in White's book: 1. Meet Hadoop, 2. MapReduce, 3. The Hadoop Distributed File System, 4. Hadoop 
+		I/O.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Sep 24</td>
+		<td align="center" width="353">
+		Anatomy of a MapReduce execution, combiner, partitioner, failure handling, Hadoop 
+		specifics</td>
+		<td class="style1">Read the following chapters in White's book: 5. 
+		Developing a M-R Application, 6. How M-R Works, 7. M-R Types and 
+		Formats, 8. M-R Features.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Oct 1</td>
+		<td align="center" width="353">
+		Algorithm examples and helper functions (sorting, sampling etc.), design patterns (in-mapper combining)</td>
+		<td class="style1">Make sure you can explain in detail how the sorting 
+		algorithm works. Consult the Miner/Shook book about some of the helper 
+		functions discussed. Consult the Lin/Dyer and the Miner/Shook 
+		books about the design patterns.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Oct 8</td>
+		<td align="center" width="353">
+		More algorithm examples (quantiles, equi-join) and more design patterns 
+		(Pairs and Stripes)</td>
+		<td class="style1">Consult the Miner/Shook book about some of the 
+		algorithms discussed. Consult the Lin/Dyer and the Miner/Shook books 
+		about the design patterns.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Oct 15</td>
+		<td align="center" width="353">
+		More design patterns (order inversion, secondary sort),
+		Pig and PigLatin</td>
+		<td class="style1">Consult the Lin/Dyer and the Miner/Shook books about 
+		the design patterns. Read the following chapter in White's book: 11. 
+		Pig.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Oct 22</td>
+		<td align="center" width="353">
+		Graph algorithms</td>
+		<td class="style1">Read the appropriate sections in the Lin/Dyer book. Create a small example graph and manually run the MapReduce 
+		programs on the example to better understand what happens in each 
+		iteration. Read more about PageRank
+		<a href="http://infolab.stanford.edu/~backrub/google.html">here</a>.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Oct 29</td>
+		<td align="center" width="353">
+		Relational databases, HBase</td>
+		<td class="style1">&nbsp;Take a look at the appropriate chapters in [M. 
+		Tamer Ozsu and Patrick Valduriez. 
+		Principles of Distributed Database Systems. Springer, 2011. Third 
+		edition.] to learn more about relational databases in a distributed 
+		context. Read the following chapter in White's book: 
+		13. HBase. For more details about HBase, consult the George book.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Nov 5</td>
+		<td align="center" width="353">
+		<strong>Midterm exam</strong></td>
+		<td class="style1">Same time and location as lecture.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Nov 12</td>
+		<td align="center" width="353">
+		Hive, data mining in MapReduce (clustering, classification)</td>
+		<td class="style1">Read the following chapter in White's book: 12. Hive. 
+		For more information 
+		about data mining, check out my
+		<a href="../2012-S-CS6220/index.htm">CS 6220</a> page. There are slides 
+		summarizing various mainstream data mining approaches and a list of 
+		recommended textbooks.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Nov 19</td>
+		<td align="center" width="353">
+		Data mining in MapReduce (ensemble methods, matrix manipulation for 
+		machine learning)</td>
+		<td class="style1">For more information 
+		about data mining, check out my
+		<a href="../2012-S-CS6220/index.htm">CS 6220</a> page. There are slides 
+		summarizing various mainstream data mining approaches and a list of 
+		recommended textbooks. For more information about machine learning 
+		techniques that rely on matrix manipulations read this
+		<a href="http://books.nips.cc/papers/files/nips19/NIPS2006_0725.pdf">
+		paper</a>.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Nov 26</td>
+		<td align="center" width="353">
+		Project progress presentations</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Dec 3</td>
+		<td align="center" width="353">
+		Theta joins in MapReduce, testing and tuning, classic view of parallel computing vs. MapReduce</td>
+		<td class="style1">&nbsp;The theta-join technique is discussed in
+		<a href="../../../papers/2011-SIGMOD-ParallelJoins.pdf">our paper</a>. Read more about testing and tuning in White's book. Take a look at the nice
+		<a href="https://computing.llnl.gov/tutorials/parallel_comp/">parallel 
+		computing tutorial</a> by LLNL. There are similar tutorials about
+		<a href="https://computing.llnl.gov/tutorials/mpi/">MPI</a> and
+		<a href="https://computing.llnl.gov/tutorials/openMP/">OpenMP</a>.</td>
+	</tr>
+	<tr>
+		<td style="width: 58px">Dec 10</td>
+		<td align="center" width="353">
+		Project presentations</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	</table>
+<hr>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Tuesday 4-5:30pm in 332 WVH</li>
+	<li>Send email (including the TAs) to set up an appointment if you cannot make it during these 
+	times.</li>
+</ul>
+<p>TAs:</p>
+<ul>
+	<li>&nbsp;Rundong Li<ul>
+		<li>Office hours: Thursday 4-5pm and Friday 10-11am in 472 WVH</li>
+	</ul>
+	</li>
+	<li>Pan Yuan<ul>
+		<li>Office hours: Friday 3-5pm in 102 WVH</li>
+	</ul>
+	</li>
+</ul>
+<p>Meeting times: Tue 6 - 9 PM<br>
+Meeting location: check registrar system for up-to-date info</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Homework/project: 50%</li>
+	<li>Midterm exam: 40%</li>
+	<li>Participation: 5%</li>
+	<li>Review quizzes: 5%</li>
+</ul>
+<h3>Reading Materials</h3>
+<ol>
+	<li>&quot;Hadoop: The Definitive Guide&quot; by Tom White, 3rd edition. (Available 
+	from Safari Books Online.)</li>
+	<li>&quot;MapReduce Design Patterns&quot; by Donald Miner and Adam Shook (Available 
+	from Safari Books Online.)</li>
+	<li>&quot;Hadoop in Practice&quot; by Alex Holmes (Available from Safari Books Online.)</li>
+	<li>&quot;Hadoop in Action&quot; by Chuck Lam&nbsp; (Available from Safari Books 
+	Online.)</li>
+	<li>&quot;Data-Intensive Text Processing with MapReduce&quot; by Jimmy Lin and Chris 
+	Dyer. (Available online, see
+	<a href="http://www.umiacs.umd.edu/~jimmylin/book.html">http://www.umiacs.umd.edu/~jimmylin/book.html</a> 
+	for info.)</li>
+	<li>&quot;HBase: The Definitive Guide&quot; by Lars George. (Available from Safari 
+	Books Online.)</li>
+	<li>Check out Yahoo!'s
+	<a href="http://developer.yahoo.com/hadoop/tutorial/index.html">Hadoop 
+	tutorial</a> for additional information. Notice that it uses the old 
+	MapReduce API.</li>
+</ol>
+<p>Safari Books Online at NEU:
+<a href="http://proquest.safaribooksonline.com.ezproxy.neu.edu/">http://proquest.safaribooksonline.com.ezproxy.neu.edu/</a> 
+(might have changed in the meantime)</p>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academicintegrity/">Academic 
+Integrity</a> Web page.</p>
+
+</body>
+
+</html>

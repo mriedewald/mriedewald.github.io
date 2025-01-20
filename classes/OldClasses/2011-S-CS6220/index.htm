@@ -1,0 +1,372 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CS6220: Data Mining Techniques</title>
+<style type="text/css">
+.style1 {
+	text-align: left;
+}
+.style2 {
+	font-weight: bold;
+	text-align: center;
+}
+.style3 {
+	border-color: #000000;
+	border-width: 0;
+}
+.style4 {
+	border: 1px solid #808080;
+}
+</style>
+</head>
+
+<body>
+
+<h2>CS 6220: Data Mining Techniques</h2>
+<p>This course covers various aspects of data mining including data 
+preprocessing, classification, ensemble methods, association rules, sequence 
+mining, and cluster analysis. The class project involves hands-on practice of 
+mining useful knowledge from a large data set.</p><hr>
+<h3>News</h3>
+<p>[04/27/2011] Final results of data mining competition posted<br>[04/13/2011] Slides from April 12 lecture posted<br>[04/07/2011] Slides from April 5 lecture posted<br>[04/04/2011] Final HW 
+available on Blackboard<br>[03/31/2011] Slides from Mar 29 lecture posted<br>[03/23/2011] Slides from Mar 22 lecture posted<br>[03/09/2011] Slides from Mar 8 lecture posted<br>[02/23/2011] Slides from Feb 22 lecture posted<br>[02/18/2011] HW 3 available on Blackboard<br>[02/16/2011] Slides from Feb 15 
+lecture posted</p>
+<hr>
+<h3>Lectures</h3>
+<p>Larger version of slides (2 per page)</p>
+<ul>
+	<li><a href="Slides/Lecture1.2-Preprocessing-Large.pdf">Data Preprocessing</a></li>
+	<li><a href="Slides/Lecture2-ClassificationPrediction-Large.pdf">
+	Classification and Prediction</a></li>
+	<li><a href="Slides/Lecture3-ItemsetsSequences-Large.pdf">Frequent Patterns</a></li>
+	<li><a href="Slides/Lecture4-Clustering-Large.pdf">Clustering</a></li>
+</ul>
+<p>(Future lectures and events are tentative.)</p>
+<table border="1" width="100%" id="table1">
+	<tr>
+		<td width="105"><b>Date</b></td>
+		<td align="center" width="353"><b>Topic</b></td>
+		<td class="style2">Remarks and Homework</td>
+	</tr>
+	<tr>
+		<td width="105">January 11</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture1.1-Introduction.pdf">Introduction</a>; 
+		<a href="Slides/Lecture1.2-Preprocessing.pdf">Data Preprocessing</a></td>
+		<td class="style1">Read chapters 1 and 2 in the book.</td>
+	</tr>
+	<tr>
+		<td width="105">January 18</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture1.2-Preprocessing.pdf">Data Preprocessing</a>;
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a></td>
+		<td class="style1">Read relevant sections in chapter 2.</td>
+	</tr>
+	<tr>
+		<td width="105">January 25</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a></td>
+		<td class="style1">Read relevant sections in chapter 6.</td>
+	</tr>
+	<tr>
+		<td width="105">January 26</td>
+		<td align="center" width="353">
+		HW 1 due at 11pm</td>
+		<td class="style1">Submit it through Blackboard.</td>
+	</tr>
+	<tr>
+		<td width="105">February 1</td>
+		<td align="center" width="353">
+		No class due to inclement weather.</td>
+		<td class="style1">The university canceled all classes after 4pm.</td>
+	</tr>
+	<tr>
+		<td width="105">February 2</td>
+		<td align="center" width="353">
+		HW 2 due at 11pm</td>
+		<td class="style1">Submit it through Blackboard</td>
+	</tr>
+	<tr>
+		<td width="105">February 8</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a></td>
+		<td class="style1">Read relevant sections in chapter 6. For more 
+		information, also look at references [1] for trees and [5] for 
+		statistical decision theory (see below).</td>
+	</tr>
+	<tr>
+		<td width="105">February 15</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a></td>
+		<td class="style1">Read relevant sections in chapter 6. For more 
+		information about the bias-variance tradeoff, look at Geman92.pdf 
+		(uploaded on Blackboard).<br><br>Optional HW: Go over the 
+		Naive Bayes computation example on slide 110 and make sure you can do 
+		this on your own for any given input record.</td>
+	</tr>
+	<tr>
+		<td width="105">February 22</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a></td>
+		<td class="style1">Read relevant sections in chapter 6. Reference [2] is 
+		an excellent source for more information about artificial neural 
+		networks.</td>
+	</tr>
+	<tr>
+		<td width="105">February 25</td>
+		<td align="center" width="353">
+		HW 3 due at 11pm</td>
+		<td class="style1">Submit it through Blackboard.</td>
+	</tr>
+	<tr>
+		<td width="105">March 1</td>
+		<td align="center" width="353">
+		No class (Spring Break)</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">March 8</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a></td>
+		<td class="style1">Read relevant sections in chapter 6.<br><br>If you 
+		are interested in more technical information about SVMs, take a look at 
+		SVMoverview.pdf (uploaded on Blackboard). 
+		Depending on your math background, some sections might be difficult to 
+		understand in detail, but the general idea will be clear.<br><br>There 
+		is no homework this week other than studying for the midterm.</td>
+	</tr>
+	<tr>
+		<td width="105">March 15</td>
+		<td align="center" width="353">
+		<strong>Midterm exam.</strong></td>
+		<td class="style1">Same start time and location as class.</td>
+	</tr>
+	<tr>
+		<td width="105">March 22</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture2-ClassificationPrediction.pdf">Classification 
+		and Prediction</a>; <a href="Slides/Lecture3-ItemsetsSequences.pdf">
+		Frequent Patterns</a></td>
+		<td class="style1">Read relevant sections in chapters 6 and 5.<br><br>
+		Slides 230-236 and the discussion about Groves represent advanced 
+		material for those interested in learning more, but are not required 
+		reading for this class. Similarly, the specific formulas for the 
+		boosting algorithm are optional reading, but you need to know the basic 
+		functionality.</td>
+	</tr>
+	<tr>
+		<td width="105">March 29</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture3-ItemsetsSequences.pdf">
+		Frequent Patterns</a></td>
+		<td class="style1">Read relevant sections in chapter 5.<br><br>Go over 
+		the examples for Apriori and FP-growth (look at the textbook for more 
+		details) and make sure you can run the algorithms manually on small 
+		examples. Compare how FP-growth explores the itemset lattice differently 
+		than Apriori.</td>
+	</tr>
+	<tr>
+		<td width="105">April 5</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture3-ItemsetsSequences.pdf">
+		Frequent Patterns</a></td>
+		<td class="style1">Read relevant sections in chapter 5.<br><br>For the 
+		example on slide 48 (better: create your own small example), find the 
+		maximal and closed frequent itemsets for min_sup=3 and min_sup=1.<br>
+		<br>Practice the computation of lift and discuss why support and 
+		confidence might not be good enough in practice.<br><br>Explain in which 
+		order GSP and PrefixSpan explore possible sequences. How do these 
+		algorithms differ in the way they are pruning the search space? (Hint: 
+		Use the tree of sequences as presented in class, which is similar to the 
+		itemset lattice and has 1-item sequences in the first level, 2-item 
+		sequences in the second and so on.)<br><br>What are the main 
+		similarities and differences between Apriori and GSP? What are the main 
+		similarities and differences between FP-Growth and PrefixSpan?</td>
+	</tr>
+	<tr>
+		<td width="105">April 12</td>
+		<td align="center" width="353">
+		<a href="Slides/Lecture4-Clustering.pdf">Clustering</a></td>
+		<td class="style1">Read relevant sections in chapter 7. For additional 
+		information, look at reference [1].</td>
+	</tr>
+	<tr>
+		<td width="105">April 18</td>
+		<td align="center" width="353">
+		Project pre-submission due at 11pm</td>
+		<td class="style1">Submit it through Blackboard.</td>
+	</tr>
+	<tr>
+		<td width="105">April 19</td>
+		<td align="center" width="353">
+		Review, Project discussion, Data Warehousing and OLAP overview</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="105">April 22</td>
+		<td align="center" width="353">
+		Project final submission due at 11pm</td>
+		<td class="style1">Submit all files through Blackboard.</td>
+	</tr>
+	<tr>
+		<td width="105">April 26</td>
+		<td align="center" width="353">
+		Final exam 6-8pm in usual classroom</td>
+		<td class="style1">&nbsp;</td>
+	</tr>
+	</table>
+<hr>
+<h3>Data Mining Competition Ranking</h3>
+<table class="style3" style="width: 457">
+	<tr>
+		<th class="style4">Team</th>
+		<th class="style4">Pre-Submission Accuracy</th>
+		<th class="style4">Team</th>
+		<th class="style4" style="width: 176px">Final Accuracy on testset1 (and 
+		testset0)</th>
+	</tr>
+	<tr>
+		<td class="style4">8</td>
+		<td class="style4">79.521</td>
+		<td class="style4">1</td>
+		<td class="style4" style="width: 176px">81.242 (81.13)</td>
+	</tr>
+	<tr>
+		<td class="style4">2</td>
+		<td class="style4">78.927</td>
+		<td class="style4">2</td>
+		<td class="style4" style="width: 176px">80.530 (78.93)</td>
+	</tr>
+	<tr>
+		<td class="style4">3</td>
+		<td class="style4">78.792</td>
+		<td class="style4">5</td>
+		<td class="style4" style="width: 176px">80.046 (79.95)</td>
+	</tr>
+	<tr>
+		<td class="style4">1</td>
+		<td class="style4">77.667</td>
+		<td class="style4">8</td>
+		<td class="style4" style="width: 176px">80.033 (80.01)</td>
+	</tr>
+	<tr>
+		<td class="style4">5</td>
+		<td class="style4">76.676</td>
+		<td class="style4">6</td>
+		<td class="style4" style="width: 176px">80.021 (80.01)</td>
+	</tr>
+	<tr>
+		<td class="style4">7</td>
+		<td class="style4">76.280</td>
+		<td class="style4">3</td>
+		<td class="style4" style="width: 176px">79.923 (79.94)</td>
+	</tr>
+	<tr>
+		<td class="style4">4</td>
+		<td class="style4">74.945</td>
+		<td class="style4">7</td>
+		<td class="style4" style="width: 176px">79.741 (79.72)</td>
+	</tr>
+	<tr>
+		<td class="style4">6</td>
+		<td class="style4">74.512</td>
+		<td class="style4">4</td>
+		<td class="style4" style="width: 176px">79.604 (79.57)</td>
+	</tr>
+	</table>
+<h3>Intermediate Results</h3>
+<table class="style3" style="width: 161px">
+	<tr>
+		<th class="style4" style="width: 38px">Team</th>
+		<th class="style4" style="width: 109px">Latest Accuracy</th>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">1</td>
+		<td class="style4" style="width: 109px">80.313</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">6</td>
+		<td class="style4" style="width: 109px">80.006</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">8</td>
+		<td class="style4" style="width: 109px">79.521</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">2</td>
+		<td class="style4" style="width: 109px">78.927</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">3</td>
+		<td class="style4" style="width: 109px">78.792</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">7</td>
+		<td class="style4" style="width: 109px">78.162</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">5</td>
+		<td class="style4" style="width: 109px">78.143</td>
+	</tr>
+	<tr>
+		<td class="style4" style="width: 38px">4</td>
+		<td class="style4" style="width: 109px">74.945</td>
+	</tr>
+	</table>
+<h3>Course Information</h3>
+<p>Instructor: <a target="_top" href="http://www.ccs.neu.edu/home/mirek/">Mirek 
+Riedewald</a> </p>
+<ul>
+	<li>Office hours: Tuesday 4:30-5:30 PM and Thursday 11AM-noon</li>
+	<li>Send email to set up an appointment if you cannot make it during these 
+	times</li>
+</ul>
+<p>TA: We have no TA this semester :-(</p>
+<p>Meeting times: Tue 6 - 9 PM<br>
+Meeting location: 108 WVH</p>
+<h3>Prerequisites</h3>
+<p>CS 5800 or CS 7800, or consent of instructor</p>
+<h3>Grading</h3>
+<ul>
+	<li>Homework: 40%</li>
+	<li>Midterm exam: 30%</li>
+	<li>Final exam: 30%</li>
+</ul>
+<h3>Textbook</h3>
+<p><img border="0" src="../2009-F-CS6220/images/HanKamberBookCover.gif" hspace="6">Jiawei Han and 
+Micheline Kamber. <a href="http://www.cs.uiuc.edu/homes/hanj/bk2/">Data Mining: 
+Concepts and Techniques</a>, 2nd edition, Morgan Kaufmann, 2006</p>
+<p>Recommended books for further reading:</p>
+<ol>
+	<li>&quot;Data Mining&quot; by Pang-Ning Tan, Michael Steinbach, and Vipin Kumar (<a href="http://www-users.cs.umn.edu/~kumar/dmbook/index.php">http://www-users.cs.umn.edu/~kumar/dmbook/index.php</a>)</li>
+	<li>&quot;Machine Learning&quot; by Tom Mitchell (<a href="http://www.cs.cmu.edu/~tom/mlbook.html">http://www.cs.cmu.edu/~tom/mlbook.html</a>)</li>
+	<li>&quot;Introduction to Machine Learning&quot; by Ethem ALPAYDIN (<a href="http://www.cmpe.boun.edu.tr/~ethem/i2ml/">http://www.cmpe.boun.edu.tr/~ethem/i2ml/</a>)</li>
+	<li>&quot;Pattern Classification&quot; by Richard O. Duda, Peter E. Hart, David G. 
+	Stork (<a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471056693.html</a>)</li>
+	<li>&quot;The Elements of Statistical Learning: Data Mining, Inference, and 
+	Prediction&quot; by Trevor Hastie, Robert Tibshirani, and Jerome Friedman (<a href="http://www-stat.stanford.edu/~tibs/ElemStatLearn/">http://www-stat.stanford.edu/~tibs/ElemStatLearn/</a>)</li>
+</ol>
+<h3>Academic Integrity Policy</h3>
+<p>A commitment to the principles of academic integrity is essential to the 
+mission of Northeastern University. The promotion of independent and original 
+scholarship ensures that students derive the most from their educational 
+experience and their pursuit of knowledge. Academic dishonesty violates the most 
+fundamental values of an intellectual community and undermines the achievements 
+of the entire University.</p>
+<p>For more information, please refer to the
+<a href="http://www.northeastern.edu/osccr/academichonesty.html">Academic 
+Integrity</a> Web page.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
