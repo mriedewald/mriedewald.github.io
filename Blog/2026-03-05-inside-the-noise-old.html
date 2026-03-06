@@ -1,16 +1,15 @@
 <!DOCTYPE HTML>
 <!--
-	Based on
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Mirek Riedewald</title>
+		<title>Mirek Riedewald - blog post</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="is-preload">
 
@@ -21,62 +20,13 @@
 					<div id="main">
 						<div class="inner">
 
-							<!-- Banner -->
-								<section id="banner">
-									<div class="content">
-										<header>
-											<h1>Mirek Riedewald</h1>
-											<p>Professor of Computer Science</p>
-										</header>
-										<p>As a professor in the Khoury College of Computer Sciences at Northeastern University in Boston, MA, I perform cutting-edge research, teach advanced computer-science courses, and serve in various leadership roles in both my institution and my research community. I enjoy collaborative research with scientists and I am always looking for new opportunities to apply my expertise in scalable data management and analysis to new domains in both academia and industry. This includes consulting and hands-on implementation of AI techniques for startups and established companies, as well as expert testimony in legal cases.</p>
-
-										<p>Research interests and expertise:
-										<ul>
-											<li>Databases</li>
-											<li>Design and implementation of algorithms and systems that scale in the size, arrival speed, and complexity of data</li>
-											<li>Distributed big-data management and analysis in the cloud</li>
-											<li>Data-stream processing</li>
-											<li>Data-driven science</li>
-											<li>Solving real-world data problems using large language models (LLM), AI, and machine learning (ML)</li>
-										</ul>
-										</p>
-										<!--
-										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-										-->
-									</div>
-									<span class="image object">
-										<img src="images/MR.jpg" alt="Mirek Riedewald in front of a whiteboard full of scribbles from a research discussion or office hours." />
-									</span>
-								</section>
-
-							<!-- Section -->
+							<!-- Content -->
 								<section>
-									<header class="major">
-										<h2 id="latest-post">Opinion Corner</h2>
-									</header>
-
-									<div class="box">
-										<p>Here I share my thoughts on various topics related to technology and education. Please note the following, especially if you disagree:</p>
-										<ul>
-											<li>The opinions expressed here are my own and do not represent those of my employer or any other organization I am affiliated with.</li>
-											<li>Given the venue and space constraints, these posts are brief and may not fully capture the complexity of the topics discussed.</li>
-											<li>These posts are meant to stimulate thought and discussion; they may not reflect my most current views as I continue to learn.</li>
-										</ul>
-
-										<p><strong>If you would like to share the post below, please use this <a href="Blog/2026-03-05-inside-the-noise.html">long-term link.</a></strong></p>
-									</div>
-
-									<div class="box">
-										<p>Starting in late January of 2026, I am discussing insights from a unique experience working with an innovative startup, <a href="https://predictap.com">PredictAP</a>, that leverages AI to solve hard problems in the real-estate management domain. This collaboration began in the summer of 2021 with <a href="https://innovation.masstech.org/aijumpstart">AI Jumpstart</a>, a program initiated by visionaries in the Massachusetts government and at Northeastern University with the goal of bringing together AI-focused small Massachusetts businesses and faculty experts to create synergies and foster innovation. Since then, I have been deeply involved in this project, which included spending an entire year during my sabbatical as a member of the engineering team.</p>
-									</div>
-
 									<h3>Inside the Noise: What Real-World Invoices Teach Us About Unstructured Data (March 5, 2026)</h3>
 
 									<h4>TL;DR</h4>
 									
-									<p>Automated invoice coding for real estate is surprisingly hard. Invoices may look structured, but they are messy documents that present four key challenges: they can contain too much information (multiple invoices bundled together, irrelevant context from emails), too little information (missing context such as contract terms or payment history), difficulty extracting structured data (ambiguous layouts, date format confusion, <a href="https://www.predictap.com/ai-or-ocr-invoice-capture-which-is-better">OCR errors</a>, information scattered across documents), and complexity in turning that data into proper coding (unclear late-fee policies, changing vendor codes, sparse training data, and challenges in measuring AI accuracy). Generative AI and LLMs have been game changers for data extraction and prediction, but many open problems remain from choosing the right optimization metric to balancing how much to rely on general invoice-reading and understanding capabilities vs customer- and vendor-specific customization.</p>
+									<p>Automated invoice coding is surprisingly hard. Invoices may look structured, but they are messy documents that present four key challenges: they can contain too much information (multiple invoices bundled together, irrelevant context from emails), too little information (missing context such as contract terms or payment history), difficulty extracting structured data (ambiguous layouts, date format confusion, OCR errors, information scattered across documents), and complexity in turning that data into proper coding (unclear late-fee policies, changing vendor codes, sparse training data, and challenges in measuring AI accuracy). Generative AI and LLMs have been game changers for data extraction and prediction, but many open problems remain from choosing the right optimization metric to balancing how much to rely on general invoice-reading and understanding capabilities vs customer- and vendor-specific customization.</p>
 
 									<h4>Full Post</h4>
 
@@ -102,11 +52,11 @@
 
 									<p>Missing information or context can cause even more problems than too much information. Consider a repair person whose invoice only lists the work hours and items purchased at a home improvement store, but does not specify the property where the work was performed. This information may be contained in an earlier email exchange, but the AP clerk submitting the invoice to an automated coding system may not have access to those emails or may not remember to include them. Worse yet, the relevant information may have been provided via a phone call that is not available in the appropriate digital format to accompany the invoice when submitting it for automated coding.</p>
 
-									<p>A similar, and quite common in real estate management, situation are invoices that arise in the context of a larger contract or agreement. Here contract terms and information, such as custom rebates or charges that can be ignored, are often not detailed on individual invoices. Hence the invoice is difficult to understand and code without access to the relevant contract information.</p>
+									<p>A similar, and quite common in real-estate management, situation are invoices that arise in the context of a larger contract or agreement. Here contract terms and information, such as custom rebates or charges that can be ignored, are often not detailed on individual invoices. Hence the invoice is difficult to understand and code without access to the relevant contract information.</p>
 
 									<p>Inherent communication latency can also lead to missing context. Consider an invoice sent by the vendor on February 1, which the customer pays on March 2. When generating the next invoice on March 1, the vendor does not know about that payment and hence may include the previous charges in the new invoice. When the customer's AP clerk then submits this March 1 invoice to the automated coding system on March 15, we must consider the March 2 payment for the February 1 invoice to not double-pay those charges on the March 1 invoice. Similar issues may arise when past invoices are only partially paid, maybe due to disputes about charges, and then correction invoices are issued to reflect the adjustments. In this case, the entire invoice and payment history must be considered to determine the correct amount to pay for the current invoice.</p>
 
-									<p>The common theme is that <a href="https://www.predictap.com/product">automated invoice coding</a> is not just about processing an invoice itself, but also about understanding the broader context in which it exists.</p>
+									<p>The common theme is that automated invoice coding is not just about processing an invoice itself, but also about understanding the broader context in which it exists.</p>
 
 
 									<h5>Extracting Structured Data</h5>
@@ -120,7 +70,7 @@
 											<p>Clearly, the raw image data in the png file does not directly reveal such key-value pairs, but instead encodes a sequence of image pixels. Even when interpreting these pixels as the text they represent, we are still left with unstructured data that must be processed further. Consider the vendor name and address in the upper left corner, which corresponds to text lines "ABC HVAC Inc.", "1 Main St", and "Boston, MA 02115"; lacking keys and normalization. While "Date: 5-March-2026" appears closer to the structured (invoice date, 03-05-2026), one still must determine the correct date type (e.g., invoice date vs due date) and normalize the date format. The latter can be tricky. For example, does 5-3-2026 mean March 5 or May 3? The answer differs depending on the country and may be hard to resolve for North American vendors operating in the US as well as Canada and Mexico.</p>
 										</div>
 										<span class="image object">
-											<img src="Blog/2026-03-05-invoice.png" alt="Example invoice for a plumbing job." />
+											<img src="2026-03-05-invoice.png" alt="Example invoice for a plumbing job." />
 										</span>
 									</section>
 
@@ -167,29 +117,22 @@
 
 									<h5>Turning Structured Data into a Coded Invoice</h5>
 
-									<p>Even after extracting structured data from invoices, there is still a lot of work to do to code them properly. We already eluded to the general hardness of invoice coding in an <a href="Blog/2026-02-15-why-invoice-coding-is-an-AI-grand-challenge.html">earlier post</a>. Here we now present a few real-world-inspired examples. Note that invoice coding requires determining who to pay how much from which account, and, in the context of real estate management, often also to assign costs to properties.</p>
+									<p>Even after extracting structured data from invoices, there is still a lot of work to do to code them properly. We already eluded to the general hardness of invoice coding in an <a href="2025-12-15-what-is-invoice-coding.html">earlier post</a>. Here we now present a few real-world-inspired examples. Note that invoice coding requires determining who to pay how much from which account, and, in the context of real-estate management, often also to assign costs to properties.</p>
 									
 									<p>Assume the structured data properly reflects late fees caused by earlier unpaid charges, as well as adjustments and discounts due to a contractual agreement. However, the invoice does not specify whether the customer is expected to pay the late fees or if they are just informational. In some cases, customers may have a policy to never pay late fees, but there may be exceptions.</p>
 
 									<p>Similarly, the invoice may show a due date, but because of terms such as NET30, the actual due date is 30 days after the invoice date, which may differ from the due date shown on the invoice. For invoice numbers, the customer may rely on the vendor-selected one for some vendors, but may generate their own internal invoice numbers for others. For instance, they may append a running number to make them unique or encode relevant information such as account number and date for a utility bill. Hence an automated invoice coding technique must decide when to predict vs when and what to read off the invoice.</p>
 
-									<p>Any method that learns from past coded invoices how to code new ones will potentially struggle when crucial information or coding practice changes frequently. In the real estate context, new vendors are added frequently, vendor codes may change, and properties may be purchased or sold. Remittance vendors create additional challenges because they may share the same vendor name, but differ in subtle clues such as address fragments, phone numbers, or payee information shown on the invoice. And the corresponding auxiliary databases that are supposed to keep track of the relationships between (remittance) vendor names, addresses and the corresponding codes (and analogously for properties) may not always be up to date and consistent. Similarly, account descriptions may be incomplete, ambiguous, or missing. Hence one has to carefully gauge how to best use these auxiliary databases for invoice coding.</p>
+									<p>Any method that learns from past coded invoices how to code new ones will potentially struggle when crucial information or coding practice changes frequently. In the real-estate context, new vendors are added frequently, vendor codes may change, and properties may be purchased or sold. Remittance vendors create additional challenges because they may share the same vendor name, but differ in subtle clues such as address fragments, phone numbers, or payee information shown on the invoice. And the corresponding auxiliary databases that are supposed to keep track of the relationships between (remittance) vendor names, addresses and the corresponding codes (and analogously for properties) may not always be up to date and consistent. Similarly, account descriptions may be incomplete, ambiguous, or completely missing. Hence one has to carefully gauge how to best use these auxiliary databases for invoice coding.</p>
 
 									<p>From a more technical perspective, automated learning from historical coded invoices also runs into hard challenges:</p>
 									<ul>
 										<li>Training data may be sparse and imbalanced, with some accounts being much more common than others. This can make it difficult for machine learning models to learn to predict the less common accounts accurately. Training data may not be representative of future invoices, especially when there are frequent changes in vendors, properties, and coding practices. Hence one must carefully consider how to select and use training data for automated invoice coding.</li>
 										<li>Essential ground truth is often missing, especially for multi-line invoices, i.e., invoices where multiple charges are coded. Consider a bill showing charges of $10 each for tea, milk, and cookies, which are coded as 2 payments: $10 from account A1 and $20 from account A2. The coded invoice does not explain which of the items was charged to which account, or what logic the human AP clerk used to determine this. Hence the likely "money flow" must be inferred holistically from the different amounts and possibly account-purpose descriptions and an understanding how well the items match these descriptions.</li>
-										<li>For machine learning and AI to be effective for <a href="https://blog.predictap.com/the-hidden-cost-of-low-granularity">invoice coding</a>, one needs an appropriate optimization metric such as accuracy, precision, recall, F1 score, and so on. Choosing the right metric is tricky, especially for multi-line invoices. Consider a ground truth coding (P1, A1, 10) and (P2, A2, 20), each representing (code of property that caused the charge, account to pay for it, amount to pay). Assume the AI model flips the properties and predicts instead (P2, A1, 10) and (P1, A2, 20). Does it have zero accuracy because neither of the two lines is correct? Or is it 100% correct on property codes and account codes individually? But how do we account for the flipped property codes?</li>
+										<li>For machine learning and AI to be effective for invoice coding, one needs an appropriate optimization metric such as accuracy, precision, recall, F1 score, and so on. Choosing the right metric is tricky, especially for multi-line invoices. Consider a ground truth coding (P1, A1, 10) and (P2, A2, 20), each representing (code of property that caused the charge, account to pay for it, amount to pay). Assume the AI model predicts instead (P2, A1, 10) and (P1, A2, 20). Does it have zero accuracy because neither of the two lines is correct? Or is it 100% correct on property codes and account codes individually? But how do we account for flipped property codes?</li>
 									</ul>
 
 									<p>In summary, even after successfully extracting structured data from invoices, there are still many challenges to overcome to code them properly. These range from typical issues of data coverage and inconsistencies to problems of ambiguity and unclear success metrics.</p>
-
-
-									<h5>Conclusion</h5>
-
-									<p>The challenges above are not just theoretical. They are the daily reality of accounts payable teams processing thousands of invoices across hundreds of properties. And they explain why so many "AI-powered" invoice tools underdeliver: they treat invoices as a straightforward extraction problem when in reality they are a complex reasoning problem that requires context, judgment, and continuous adaptation.</p>
-									
-									<p>This raises a fundamental question for anyone building or evaluating AI in this space: how much should a model rely on general invoice-reading capabilities versus learning the specific behaviors, coding logic, and institutional knowledge of each individual customer? Getting that balance wrong, in either direction, has real consequences. That tension between broad and narrow intelligence is what we will explore next.</p>
 								</section>
 						</div>
 					</div>
@@ -198,65 +141,24 @@
 					<div id="sidebar">
 						<div class="inner">
 
-							<!-- Search
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-							 -->
-
 							<!-- Menu -->
 								<nav id="menu">
 									<header class="major">
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="research.html">Research</a></li>
-										<li><a href="teaching.html">Teaching</a></li>
-										<li><a href="#latest-post">Latest Post</a></li>
-										<li>
-											<span class="opener">Recent Posts</span>
-											<ul>
-												<li><a href="Blog/2026-03-05-inside-the-noise.html">Inside the Noise: What Real-World Invoices Teach Us About Unstructured Data (March 5, 2026)</a></li>
-												<li><a href="Blog/2026-02-15-why-invoice-coding-is-an-AI-grand-challenge.html">Why Invoice Coding Is an AI Grand Challenge (Feb 15, 2026)</a></li>
-												<li><a href="Blog/2026-01-from-theory-to-real-world-impact.html">From Theory to Real-World Impact: How an Innovative Startup Made Me a Better Professor (Jan 24, 2026)</a></li>
-												<li><a href="Blog/2026-01-role-of-AI-in-education.html">Thoughts about the role of AI in education (Jan 15, 2026)</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>I am happy to discuss research and consulting opportunities, collaborations, etc. It is perfectly fine to send me reminders if I do not respond in a timely manner: I receive a lot of emails and sometimes important messages end up in spam folders.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="mailto:m.riedewald@northeastern.edu">m.riedewald@northeastern.edu</a></li>
-										<li class="icon solid fa-phone">+1 (617) 373-4766</li>
-										<li class="icon solid fa-home">Khoury College of Computer Sciences<br/>202 West Village H<br/>Northeastern University<br/>360 Huntington Ave<br/>Boston, MA 02115</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Mirek Riedewald. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
+										<li><a href="../index.html">Homepage</a></li>
 						</div>
 					</div>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>
