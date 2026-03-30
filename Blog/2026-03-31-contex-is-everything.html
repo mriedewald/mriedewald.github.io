@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mirek Riedewald - blog post</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Content -->
+								<section>
+									<h3>Context Matters: Why Domain-Specific AI Outperforms Foundation Models (March 31, 2026)</h3>
+
+									<h4>TL;DR</h4>
+									
+									<p>Foundation models (such as LLMs) bring broad language understanding and world knowledge but lack domain expertise, while traditional supervised learning can master a specific task but misses the bigger picture. <strong>Domain-specific AI</strong> combines both: it starts with a foundation model and adapts it to a particular use case&mdash;such as automated invoice coding&mdash;using techniques like prompt engineering, RAG, fine-tuning, distillation, or agentic architectures. For complex real-world problems that require both general knowledge and specialized expertise, domain-specific AI doesn't compete with foundation models, but it builds on them.</p>
+
+									<h4>Full Post</h4>
+
+									<h5>Overview</h5>
+
+									<p>Before we dive into the details, note that this blog's title is intentionally provocative. As will become clear, instead of viewing this as a competition between "foundation models" and "domain-specific AI," for many advanced applications the former, as the name implies, serves as the basis for building the latter. But let's not get ahead of ourselves. Since this post will be a little more technical, I will strive to keep things intuitive and accessible by focusing on automated invoice coding as a concrete example throughout. <a href="2026-03-05-inside-the-noise.html">Recall</a> that this is a task that not only requires extracting structured data from "unstructured" documents, but also "understanding" of invoice content and applying of customer-specific coding "rules" (which are usually nothing like those deterministic "if A then do B" style actions the term "rule" may suggest).</p>
+
+									<p>Of course, we will explain the most important terms and provide some context about supervised learning and AI in general.</p>
+
+									<h5>Supervised Learning Before the AI Revolution</h5>
+
+									<p>How would one have attempted automated invoice coding before 2023, the year when ChatGPT and similar AI models went mainstream? One option would have been to talk to the people involved in the invoice coding process and try to understand how they do it. Then, one could have attempted to codify that understanding into a set of rules, templates, and heuristics, and then implement those rules in software. This is reminiscent of the "expert systems" approach to AI that was popular in the 1980s and 1990s, which for sufficiently complex problems like invoice coding would have been a daunting task with brittle results. The rules would have been incomplete and hard to maintain, and the system would have struggled to handle the wide variety of invoice formats and content it would encounter in the real world.</p>
+
+									<p>Rather than relying on a tedious "manual" rule extraction process, one could have taken a more data-driven approach&mdash;	through <strong>supervised learning</strong>. As discussed in my earlier posts, traditionally invoices have been coded by human AP clerks, providing rich datasets of labeled examples. A labeled example is one where we not only have the input data (the invoice) but also the correct output (the coded invoice). With sufficiently many such examples covering a variety of invoice types, supervised learning can train a model to generalize and make accurate predictions on new, unseen invoices. Many supervised learning techniques had been developed over the years, from decision trees and nearest neighbor to neural networks, SVMs and ensemble methods.</p>
+
+									<p>Traditional supervised learning is a great success story for many prediction problems, but it falls short in handling the complexity and variability of real-world invoice data. Without getting too technical, the reason is that accurate invoice coding requires a certain level of understanding of natural language and business context. For example, extracting structured data from an invoice typically requires linking information across documents, taking into account layout clues aimed at human readers, and paying attention to intra-document context (see <a href="2026-03-05-inside-the-noise.html">this earlier post</a>). Similarly, understanding that apples, grapes, and pears are fruits can help a model learn from invoices with apples and pears that an account is used to pay for fruits. And later it can apply this to an invoice charging for grapes, even though grapes did not appear in the training data.</p>
+
+									<p>To use a somewhat contrived analogy, a supervised-learning model trained on a dataset of invoices is like an alien who is not familiar with human language or knowledge, but has only observed example invoices and their coded outputs. The alien can learn to mimic the patterns in the data, treating words like cryptic tokens, but will miss important clues and connections that are essential for correct invoice coding. And this is where foundation models come into play.</p>
+
+									<h5>Foundation Models</h5>
+
+									<p>Foundation models are large-scale AI models trained on broad, diverse datasets that can be adapted to a wide range of tasks. Rather than being built for a single purpose, they learn general patterns from massive amounts of data such as text, images, and source-code. In the context of invoice coding, think of them as a person who completed high school or maybe college, but has never been trained specifically in accounting or invoice processing. They have a broad understanding of language and the world and they would be able to explain much of the content seen on an invoice, like identifying the vendor name and address or what the line items are. But they would not know the vendor code, which account to charge for a given line item, or how to split the cost of lawn mowing over the various properties managed by the customer.</p>
+
+									<p>Let's dive a little deeper into foundation models. The term was popularized by a landmark August 2021 <a href="https://arxiv.org/abs/2108.07258">report</a> from <a href="https://crfm.stanford.edu/">Stanford's Center for Research on Foundation Models (CRFM)</a>. One of the most well-known types of foundation model is the large language model (LLM), which is trained on vast amounts of text data to learn the structure and patterns of human language. An LLM is, at its core, a pattern-completion engine for text. Imagine a person who has read every book, article, blog post, and website ever written, picking up the flow of a language. Given the beginning of a text, it can automatically select the best continuation. More formally, given a sequence of tokens (think of a token like a word or piece of a word), it can predict the probability distribution of the next token. By cleverly sampling from that distribution, it can generate text that is coherent and contextually relevant.</p>
+
+									<p>Under the hood, an LLM is implemented as a neural network, relying on a transformer architecture with billions of numerical parameters. These parameters define a statistical representation of human language and even a lot of the <strong>knowledge</strong> expressed in that language. The training process follows the supervised learning paradigm, but the labeled training examples are just token sequences. Assuming for simplicity that tokens are words (in practice, models often use subword tokens), a phrase like "this invoice is challenging" could be split into input tokens ["this", "invoice", "is"] and output token "challenging". The model learns to assign a higher probability to "challenging" compared to, say, "tasty", given the preceding tokens. By considering huge amounts of text, the model can take into account not just local word patterns but also long-range dependencies and complex structure. Consider a longer prefix such as "Here we have a water bill. This invoice is..." If the model has learned a strong pattern of "water bills" being followed by "easy", it may complete the sentence with "easy" rather than "challenging".</p>
+
+									<p>In short, an LLM is a pattern-completion engine that produces text that "looks like something a human may have written." This allows it to produce, say, a convincing essay or even a novel. But it would not be very good at other tasks such as chatting with a human user. Those require additional training and fine-tuning. To use a well-known example, ChatGPT is a chatbot built on top of a foundation model like GPT-4. By building on a foundation model trained on text and images such as GPT-4o, the corresponding chatbot can also support interactions involving images, such as asking it to describe an image.</p>
+
+									<h5>Domain-Specific AI</h5>
+
+									<p>A chatbot built on a foundation model is an example of domain-specific AI: it retains the general knowledge and capabilities of the LLM while being adapted for a specific use case. We can also view it as the best of both worlds: traditional supervised learning that completely focuses on the task at hand but lacks the bigger picture and foundational models that provide general capabilities but lack domain-specific expertise. In the context of invoice coding, domain-specific AI would correspond to a "random person" with a typical K-12 and maybe college education, who received training for a specific customer's invoice processing needs. Clearly, this is the person we would like to have on our team. But how can we create the equivalent of this person using AI?</p>
+
+									<p>There are several common techniques for creating domain-specific AI from a foundation model, roughly ordered from least to most involved:</p>
+									<ul>
+										<li>Prompt engineering is the simplest approach. You provide the foundation model with instructions, context, and examples specific to your domain, all within the prompt itself. The model does not learn anything new, i.e., no model parameters are changed. This is fast and flexible, but limited by context window size. Since the model doesn't learn from the prompt, it cannot adapt to new situations or improve over time&mdash;adaptation must be achieved through prompt modification. This is like a "random person" whose only training about customer-specific coding practice is the prompt. It can still be highly effective when prompts are well-crafted, but may hit limitations in complex scenarios.</li>
+
+										<li>Retrieval-Augmented Generation (RAG) is best understood as advanced prompt-engineering that connects the foundation model to an external knowledge base. When the model receives a query, it first fetches relevant information from that knowledge base and uses it to ground its response. This keeps the model current and factually anchored without retraining. In the context of invoice coding, the knowledge base could be a corpus of recent invoices and their corresponding coding information. When being tasked to code a new invoice, RAG could retrieve a handful of the most similar invoices and their coding information, adding them to the prompt.</li>
+										
+										<li>Fine-tuning, in contrast to prompt engineering and RAG, modifies the foundation model based on a training dataset from the target domain. It is more resource-intensive than prompting or RAG, but can yield better domain performance by learning subtle new patterns, instead of trying to recognize those patterns on-the-fly from general knowledge and a prompt. For invoice coding, the training data could be a large corpus of invoices and their corresponding coding information. In practice, the main challenge of fine-tuning is to strike the right balance between retaining the general language and world knowledge of the foundation model and learning the specific patterns of the target domain. Too much fine-tuning can lead to "catastrophic forgetting," where the model loses its general capabilities. In terms of the human equivalent, fine-tuning is like training a "random person" on the specific customer's coding practice by showing them a huge number of examples.</li>
+										
+										<li>Distillation creates a new model by using a large foundation model to train a smaller, more efficient model that is specialized for your use case. In contrast to prompt engineering, RAG, and fine-tuning, the main goal is not to achieve better prediction quality, but rather to reduce resource consumption and latency: the smaller model learns to mimic the larger one's behavior on domain-specific tasks, giving you something faster and cheaper to run in production. Distillation applies supervised learning by first labeling domain-specific inputs with the output of the larger model and then using these input-output pairs to train the smaller model. For invoice coding, the input data would be the set of past invoices.</li>
+										
+										<li>Agentic architectures combine a foundation model with tools, APIs, and workflows specific to a domain. For invoice coding, a foundation model might orchestrate calls to a knowledge base of past invoices and their coding information, a database of vendor names and addresses, a domain-specific rules engine that explains a customer's practice of handling tax information, and even a calculator to check that individual account charges add up to the correct total. When done right, an agentic architecture could achieve the closest approximation to an expert AP clerk.</li>
+									</ul>
+
+									<h5>Conclusion</h5>
+
+									<p>While (1) foundation models are like a "random person" with good general school education and (2) traditional supervised learning produced the equivalent of an alien whose knowledge is limited to the specific domain, (3) domain-specific AI systems combine the strengths of both approaches. The latest frontier are agentic architectures that attempt to mimic the behavior of human experts. For sufficiently challenging problems like invoice coding, which requires understanding of language and general human knowledge, domain-specific AI typically is not in competition with, but must build on a foundation model.</p>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">Homepage</a></li>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
