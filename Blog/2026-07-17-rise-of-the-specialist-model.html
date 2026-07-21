@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Mirek Riedewald - blog post</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Content -->
+								<section>
+									<div class="box">
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<h5>Previous post</h5>
+												<a href="2026-06-23-depth-over-breadth.html">Depth Over Breadth: Why the Next Wave of AI Belongs to Domain Experts (June 23, 2026)</a>
+											</div>
+											<div class="col-6 col-12-small">
+											</div>
+										</div>
+									</div>
+
+									<h3>The Rise of the Specialist Model: How Domain Expertise Will Define AI's Future (July 17, 2026)</h3>
+
+									<h4>TL;DR</h4>
+									
+									<p>AI improves along two axes&mdash;<em>breadth</em> (the range of tasks a model can handle) and <em>depth</em> (mastery of one narrow problem to a standard a paying customer trusts in production). Foundation models keep raising the floor everywhere, but they are becoming a commodity utility layer, like the compute cloud or electricity. Thus much of the value will move a layer up, to narrow-and-deep specialist systems whose moat is not model size but proprietary data, workflow integration, and a human-in-the-loop feedback loop that turns everyday expert corrections into a compounding advantage. The organizational upshot: rent the foundation model (or get a free open-source one) rather than build it, own the specialist layer and its feedback loop, and treat domain experts not as costs to automate away but as the source of the moat. The defining competitive tension of the coming years won't be who has the biggest, most general model, but who has the deepest one for a problem people will pay to solve.</p>
+
+									<h4>Full Post</h4>
+
+									<h5>Overview</h5>
+
+									<p>Over the last several months I have been exploring why we need narrow-and-deep AI and how it works in principle. In <a href="2026-03-31-context-is-everything.html">Context Matters</a> I argued that for hard real-world problems like invoice coding, domain-specific AI does not compete with foundation models, but builds on them by combining general language and world knowledge with specialized expertise. In <a href="2026-05-13-learning-from-accountants.html">Learning from Accountants</a> I outlined human-in-the-loop as a powerful mechanism for improving such a system.</p>
+
+									<p>In this post I am taking a step back to ask why narrow-and-deep AI matters&mdash;strategically, economically, and organizationally. The answers will impact where the money goes, where the defensible advantages are, and how organizations should reshape themselves around AI. My thesis is this:
+									<blockquote>The defining competitive tension of the coming years will not be who has the biggest most general model, but who has the deepest one for a problem people will pay to solve.</blockquote>
+
+									<h5>Two Directions of Progress</h5>
+
+									<p>To support this thesis, I begin by separating the two main axes along which AI can improve. One is <em>breadth</em>: the range of different tasks a model can competently perform, from summarizing books and coding software artifacts to teaching calculus. This is the axis that epitomizes the success of modern AI and that has received the most attention in the public discourse about AI. The other is <em>depth</em>: mastery of a single narrow problem, such as coding a real estate client's invoices, to a standard that a paying customer will actually trust in production.</p>
+
+									<p>These two axes are often confused. Let me illustrate this by asking a seemingly simple question: Do foundation models represent breadth or depth? Since the notion of "foundation model" itself is not completely agreed upon, I will make things more concrete by focusing on the famous large language models (LLM). Abstractly, an LLM is a compact text generator that mimics the structure and patterns of human language. One can argue that it represents breadth, because it has ingested virtually all human knowledge available in text form, from blog posts to scientific papers and textbooks. Thus it can produce fictional stories as well as mathematical proofs. On the other hand, it essentially solves a <em>single task</em>: expand a given text prefix with the most likely next tokens (words). Regarding depth, the picture is similarly confusing. Since the LLM has "read" huge amounts of expert material, it should have a deep understanding of many domains. But that understanding does not necessarily translate into the ability to carry out a specific task correctly end-to-end. For example, even holding a conversation with a user requires a specialized application that is <em>built on top of</em> the LLM. Thus the difference between LLMs such as GPT-4 and the corresponding chatbots such as ChatGPT-4.</p>
+
+									<p>In short, a better foundation model improves both breadth and depth by raising the floor everywhere: a task that was out of reach becomes merely difficult. But raising the floor is not the same as reaching the ceiling. In every domain I have looked at closely, there is a "last mile" between what a capable generalist can do and what the job actually requires&mdash;and that last mile is where willingness to pay concentrates. An AP clerk does not need a model that can also write poetry; they need one that gets <em>this</em> customer's vendor codes, GL accounts, and property splits right.</p>
+
+									<h5>Where the Value Accrues</h5>
+
+									<p>Here is the economic heart of the matter. Foundation models are becoming a <strong>utility layer</strong>&mdash;something closer to cloud computing or electricity than to a defensible product. There are several credible providers, capabilities are converging, and the price per unit of intelligence keeps falling. (This does not contradict the fact that improved models may command higher prices for better, "more intelligent," results.) That is wonderful for everyone building on top, and it is exactly why the base layer is a difficult place to capture margin in the long term.</p>
+
+									<p>As foundation models are becoming a commodity, the distinguishing factor will be the domain expertise needed for creating the more specialized models on top. As I noted in <a href="https://khoury.northeastern.edu/~mirek/Blog/2026-05-13-learning-from-accountants.html">Learning from Accountants</a>, a customer's database of past coded invoices is the single most important materialization of the accountants' combined knowledge and experience. That asset is proprietary, expensive to reproduce, and grows more valuable with use. And while some of this knowledge can be conveyed to a general-purpose AI through a prompt including a handful of examples, even greater value is captured by a specialist model trained on <em>all</em> of the customer's data. The best specialist model is not just a wrapper around a generalist, but a distillation of the accountants' expertise. And it is that distillation that is the source of defensible value.</p>
+
+									<h5>The Feedback Loop is the Moat</h5>
+
+									<p>While my last post explored human-in-the-loop specialist AI more from a technical perspective, this economic view highlights the strategic importance of the feedback loop. Each expert correction is two things at once. It is a labeled training example that makes tomorrow's predictions better, and it is a small deposit into a competitive advantage that a latecomer cannot simply buy. More usage produces more corrections, which produce a better model, which earns more usage. A system that retrains on customer corrections every day is not just improving accuracy&mdash;it is compounding a lead. Of course, if expert corrections vanish into a spreadsheet, or the review workflow discards important signals&mdash;which fields were changed, in what order, after how much hesitation&mdash;then the data is generated and thrown away. The moat is not automatic. It is the reward for designing the workflow so that ordinary expert work continuously teaches the system, mostly for free.</p>
+
+									<h5>What This Means for Organizations</h5>
+
+									<p>If specialist depth is where the value is, several organizational implications follow, and most of them cut against the reflexive &ldquo;build a big model&rdquo; or &ldquo;replace the humans&rdquo; instincts.</p>
+
+									<p>The first is a buy-versus-build question. Almost no organization should be training its own foundation model. That is the utility layer, and it should be rented or obtained for free from open-source models. The strategic question is not <em>which model do we build</em> but <em>which specialist layer do we own, and do we own the feedback loop on top of it</em>. The defensible work lies in the proprietary data and in the workflow, not in the foundation model.</p>
+
+									<p>The second concerns people, and it is the implication I feel most strongly about. The popular framing pits AI against expert labor. The specialist-model view reframes that. In a narrow-and-deep system, the domain expert is not the thing being automated away&mdash;the expert is the source of the moat. Their judgment is what the model is distilled from, and their ongoing corrections are what keep it sharp as the world drifts. The honest version of this is not that no roles change; routine, high-volume work will shrink, as it should. But the expert's role shifts from <em>doing</em> the repetitive task to <em>supervising, correcting, and teaching</em> the system that does it. And that role becomes more valuable, not less, because it is the input to a compounding asset. Organizations that treat their experts as an annoyance to be eliminated will, ironically, starve the virtuous cycle that would have given them an advantage.</p>
+
+									<p>The third is that instrumenting expert judgment becomes a design discipline in its own right. Who reviews which cases, in what order, with what confidence, and how corrections and hesitations are logged&mdash;these stop being incidental UI details and become strategic infrastructure. And in regulated domains such as finance, healthcare, and law, the requirements I have discussed before&mdash;calibrated confidence scores, explanations, audit trails&mdash;are not polish. They are the price of admission, and, for the same reason, a source of differentiation. A specialist system that can show <em>why</em> and stand up to an audit will beat a more accurate one that cannot.</p>
+
+									<h5>A Strategic Outlook</h5>
+
+									<p>Pulling everything together, here is what I expect, keeping in mind the rapid pace of change in this field. The base layer consolidates toward a handful of foundation-model utilities that compete largely on price and raw capability; plus a variety of open-source alternatives. The layer above it proliferates: many vertical specialists, each narrow, each deep, each defended not by model size but by data, workflow, and feedback velocity. Within any given vertical, the winners will tend to be whoever got to the customers first and instrumented their experts' judgment most effectively&mdash;advantages that are cumulative and therefore hard to overtake late.</p>
+									
+									<p>Of course, I may be wrong. For example, as foundation models improve, as tool use and agentic architectures mature, as context windows lengthen and fine-tuning gets cheaper and easier, domain adaptation could become so trivial that a general agent absorbs many tasks that today demand a bespoke specialist. If reaching the last mile stops requiring proprietary data and painstaking workflow integration, the moat I have described gets shallow fast. That is the scenario specialists should watch for. My own view is that for problems combining messy real-world data, customer-specific rules, and regulated accountability&mdash;invoice coding being my running example, but hardly the only one&mdash;the last mile, the proprietary data behind it, and the demand for auditable trust will keep specialist value durable for the foreseeable future. But I hold that view as a bet, not a certainty.</p>
+
+									<h5>Conclusion</h5>
+
+									<p>The race for breadth is real and it is not going away. But it is only half the story, and probably not the half where most enterprise value gets created. The other half is narrow-and-deep: domain expertise, captured as proprietary data and embedded in the workflow, and kept current through a human-in-the-loop feedback loop that turns everyday expert work into a compounding advantage. In that picture the foundation model is the raw material&mdash;essential, powerful, and increasingly a commodity&mdash;while the specialist system, taught by the accountants, the radiologists, and the lawyers who actually do the work, is the product. That is where I expect AI's economic future to be defined: not by the models that know a little about everything, but by the ones that know almost everything about something.</p>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">Homepage</a></li>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
